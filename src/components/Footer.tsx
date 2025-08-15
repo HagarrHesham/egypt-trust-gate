@@ -70,9 +70,11 @@ const Footer = () => {
           {/* Company Info & Newsletter */}
           <div>
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-primary-foreground/10 rounded-lg flex items-center justify-center">
-                <Search className="h-6 w-6 text-primary-foreground" />
-              </div>
+              <img 
+                src="/lovable-uploads/5c73632b-646a-4bab-b94f-3e7e3dd4296e.png" 
+                alt="Egypt Global Trust Logo" 
+                className="h-12 w-auto filter brightness-0 invert"
+              />
               <div>
                 <h3 className="text-2xl font-bold font-heading">
                   {language === 'en' ? 'Egypt: Global Trust' : 'مصر: الثقة العالمية'}

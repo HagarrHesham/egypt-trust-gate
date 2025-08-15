@@ -23,9 +23,11 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center shadow-glow">
-              <Search className="h-6 w-6 text-primary-foreground" />
-            </div>
+            <img 
+              src="/lovable-uploads/5c73632b-646a-4bab-b94f-3e7e3dd4296e.png" 
+              alt="Egypt Global Trust Logo" 
+              className="h-12 w-auto"
+            />
             <div>
               <h1 className="text-xl font-bold text-foreground font-heading">
                 {language === 'en' ? 'Egypt: Global Trust' : 'مصر: الثقة العالمية'}
