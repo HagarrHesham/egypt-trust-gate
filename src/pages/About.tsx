@@ -44,19 +44,19 @@ const About = () => {
   const teamMembers = [
     {
       name: "Ahmed Hesham",
-      role: "Business Development", 
+      role: "Partnerships & Data Analysis Specialist", 
       roleAr: "مسؤول بناء شبكة العلاقات وتحليل البيانات",
       image: "/lovable-uploads/d34bef7e-db28-41ce-9bff-0f360d9e0d9e.png"
     },
     {
       name: "Alaa Hesham",
-      role: "Founder - CEO",
+      role: "Risk Management & Due Diligence Specialist",
       roleAr: "مسؤول إدارة المخاطر وال Due Diligence",
       image: "/lovable-uploads/d34bef7e-db28-41ce-9bff-0f360d9e0d9e.png"
     },
     {
       name: "Hagar Hesham", 
-      role: "Operations Management",
+      role: "Technology & Operations Specialist",
       roleAr: "مسؤول العمليات والتشغيل التقني",
       image: "/lovable-uploads/d34bef7e-db28-41ce-9bff-0f360d9e0d9e.png"
     }
