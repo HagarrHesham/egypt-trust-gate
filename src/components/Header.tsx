@@ -14,7 +14,7 @@ const Header = () => {
     { label: language === 'en' ? 'Due Diligence' : 'العناية الواجبة', href: '#services' },
     { label: language === 'en' ? 'Field Verification' : 'التحقق الميداني', href: '#verification' },
     { label: language === 'en' ? 'Reports' : 'التقارير', href: '#reports' },
-    { label: language === 'en' ? 'About' : 'حول', href: '#about' },
+    { label: language === 'en' ? 'About' : 'حول', href: '/about' },
   ];
 
   return (
