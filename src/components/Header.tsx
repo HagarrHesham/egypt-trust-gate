@@ -25,15 +25,15 @@ const Header = () => {
           <div className="flex items-center space-x-3">
             <img 
               src="/lovable-uploads/5c73632b-646a-4bab-b94f-3e7e3dd4296e.png" 
-              alt="Egypt Global Trust Logo" 
+              alt="Global Trust Logo" 
               className="h-12 w-auto"
             />
             <div>
               <h1 className="text-xl font-bold text-foreground font-heading">
-                {language === 'en' ? 'Egypt: Global Trust' : 'مصر: الثقة العالمية'}
+                {language === 'en' ? 'Global Trust' : 'الثقة العالمية'}
               </h1>
               <p className="text-xs text-muted-foreground">
-                {language === 'en' ? 'Due Diligence & Verification' : 'العناية الواجبة والتحقق'}
+                {language === 'en' ? 'Your Gateway to Secure Investments' : 'بوابتك للاستثمارات الآمنة'}
               </p>
             </div>
           </div>

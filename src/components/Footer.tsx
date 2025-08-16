@@ -72,15 +72,15 @@ const Footer = () => {
             <div className="flex items-center space-x-3 mb-6">
               <img 
                 src="/lovable-uploads/5c73632b-646a-4bab-b94f-3e7e3dd4296e.png" 
-                alt="Egypt Global Trust Logo" 
+                alt="Global Trust Logo" 
                 className="h-12 w-auto filter brightness-0 invert"
               />
               <div>
                 <h3 className="text-2xl font-bold font-heading">
-                  {language === 'en' ? 'Egypt: Global Trust' : 'مصر: الثقة العالمية'}
+                  {language === 'en' ? 'Global Trust' : 'الثقة العالمية'}
                 </h3>
                 <p className="text-primary-foreground/80 text-sm">
-                  {language === 'en' ? 'Due Diligence & Verification Platform' : 'منصة العناية الواجبة والتحقق'}
+                  {language === 'en' ? 'Your Gateway to Secure Investments' : 'بوابتك للاستثمارات الآمنة'}
                 </p>
               </div>
             </div>
@@ -192,7 +192,7 @@ const Footer = () => {
               </a>
             </div>
             <p className="text-sm text-primary-foreground/60">
-              © 2024 Egypt: Global Trust. {language === 'en' ? 'All rights reserved.' : 'جميع الحقوق محفوظة.'}
+              © 2024 Global Trust. {language === 'en' ? 'All rights reserved.' : 'جميع الحقوق محفوظة.'}
             </p>
           </div>
         </div>
