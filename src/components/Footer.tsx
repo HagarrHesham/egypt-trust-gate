@@ -2,9 +2,10 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search, Mail, Phone, MapPin, Globe, Linkedin, Twitter } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
-  const [language] = useState<'en' | 'ar'>('en');
+  const { language, t } = useLanguage();
   const [email, setEmail] = useState("");
 
   const handleSubscribe = () => {
@@ -16,7 +17,7 @@ const Footer = () => {
 
   const footerSections = [
     {
-      title: language === 'en' ? 'Services' : 'الخدمات',
+      title: t('footer.services'),
       links: [
         { label: language === 'en' ? 'Due Diligence' : 'العناية الواجبة', href: '#' },
         { label: language === 'en' ? 'Credit Reports' : 'تقارير الائتمان', href: '#' },
@@ -27,10 +28,10 @@ const Footer = () => {
     {
       title: language === 'en' ? 'Company' : 'الشركة',
       links: [
-        { label: language === 'en' ? 'About Us' : 'من نحن', href: '#' },
+        { label: t('nav.about'), href: '/about' },
         { label: language === 'en' ? 'Our Team' : 'فريقنا', href: '#' },
         { label: language === 'en' ? 'Careers' : 'الوظائف', href: '#' },
-        { label: language === 'en' ? 'Contact' : 'اتصل بنا', href: '#' }
+        { label: t('nav.contact'), href: '#' }
       ]
     },
     {
@@ -77,19 +78,16 @@ const Footer = () => {
               />
               <div>
                 <h3 className="text-2xl font-bold font-heading">
-                  {language === 'en' ? 'Global Trust' : 'الثقة العالمية'}
+                  Global Trust
                 </h3>
                 <p className="text-primary-foreground/80 text-sm">
-                  {language === 'en' ? 'Your Gateway to Secure Investments' : 'بوابتك للاستثمارات الآمنة'}
+                  {t('hero.title')}
                 </p>
               </div>
             </div>
             
             <p className="text-primary-foreground/90 mb-8 leading-relaxed">
-              {language === 'en' 
-                ? 'Leading provider of comprehensive due diligence services, combining global data networks with local field verification across 50+ countries.'
-                : 'المزود الرائد لخدمات العناية الواجبة الشاملة، يجمع بين شبكات البيانات العالمية والتحقق الميداني المحلي في أكثر من 50 دولة.'
-              }
+              {t('footer.tagline')}
             </p>
 
             {/* Newsletter */}
@@ -192,7 +190,7 @@ const Footer = () => {
               </a>
             </div>
             <p className="text-sm text-primary-foreground/60">
-              © 2024 Global Trust. {language === 'en' ? 'All rights reserved.' : 'جميع الحقوق محفوظة.'}
+              © 2024 Global Trust. {t('footer.rights')}
             </p>
           </div>
         </div>

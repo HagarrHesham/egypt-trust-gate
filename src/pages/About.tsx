@@ -1,42 +1,34 @@
-import { useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Shield, Eye, Target, Users, Lightbulb, Heart, Award, Globe2 } from "lucide-react";
 
 const About = () => {
-  const [language, setLanguage] = useState<'en' | 'ar'>('en');
+  const { language, t } = useLanguage();
 
   const coreValues = [
     {
       number: "01",
-      title: language === 'en' ? 'Trust' : 'الثقة',
-      description: language === 'en' 
-        ? 'Building strong, sustainable relationships with investors and local entities.'
-        : 'بناء علاقات قوية ومستدامة مع المستثمرين والجهات المحلية.',
+      title: t('about.values.accuracy'),
+      description: t('about.values.accuracy.desc'),
       icon: Shield
     },
     {
       number: "02", 
-      title: language === 'en' ? 'Transparency' : 'الشفافية',
-      description: language === 'en'
-        ? 'Providing clear and accurate reports that support investors\' sound decisions.'
-        : 'تقديم تقارير واضحة ودقيقة تدعم القرارات السليمة للمستثمرين.',
+      title: t('about.values.integrity'),
+      description: t('about.values.integrity.desc'),
       icon: Eye
     },
     {
       number: "03",
-      title: language === 'en' ? 'Social Responsibility' : 'المسؤولية المجتمعية', 
-      description: language === 'en'
-        ? 'Contributing to economic development and creating a united community that achieves sustainable economic and social progress.'
-        : 'الإسهام في تنمية الاقتصاد ووحدة المجتمع بما يحقق تقدما اقتصاديا واجتماعيا مستداما.',
+      title: t('about.values.reliability'), 
+      description: t('about.values.reliability.desc'),
       icon: Users
     },
     {
       number: "04",
-      title: language === 'en' ? 'Professionalism' : 'الاحترافية',
-      description: language === 'en'
-        ? 'High-quality performance according to the highest international standards.'
-        : 'أداء عالي الجودة بتوافق أعلى المعايير العالمية.',
+      title: t('about.values.expertise'),
+      description: t('about.values.expertise.desc'),
       icon: Award
     }
   ];
@@ -79,14 +71,13 @@ const About = () => {
               />
             </div>
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 font-heading">
-              About Global Trust
+              {t('about.hero.title')}
             </h1>
             <p className="text-xl md:text-2xl text-white/90 leading-relaxed mb-12">
-              A national platform that bridges the gap between global investors and local entities in Egypt, 
-              providing accurate and reliable reports on Egyptian companies to support safe and transparent investment decisions.
+              {t('about.hero.subtitle')}
             </p>
             <div className="inline-flex items-center px-6 py-3 bg-white/10 rounded-full border border-white/20 backdrop-blur-sm">
-              <span className="text-white/90 text-lg">Who We Are</span>
+              <span className="text-white/90 text-lg">{language === 'en' ? 'Who We Are' : 'من نحن'}</span>
               <div className="ml-3 w-2 h-2 bg-white rounded-full animate-pulse"></div>
             </div>
           </div>
@@ -106,14 +97,12 @@ const About = () => {
               <div className="bg-card p-8 rounded-3xl border border-border shadow-elegant ml-8 mt-8">
                 <div className="flex justify-end mb-4">
                   <span className="inline-flex items-center px-4 py-2 bg-accent/10 rounded-full border border-accent/20 text-accent text-sm font-medium">
-                    Mission
+                    {language === 'en' ? 'Mission' : 'المهمة'}
                   </span>
                 </div>
-                <h2 className="text-3xl font-bold text-accent mb-6 font-heading">Our Mission</h2>
+                <h2 className="text-3xl font-bold text-accent mb-6 font-heading">{t('about.mission.title')}</h2>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Providing comprehensive and reliable reports on Egyptian companies to support investors' decisions, 
-                  enhance integrity, and prevent corruption through accurate and detailed reports covering legal, 
-                  financial, and reputational aspects to build a transparent business environment.
+                  {t('about.mission.content')}
                 </p>
               </div>
             </div>
@@ -126,13 +115,12 @@ const About = () => {
               <div className="bg-card p-8 rounded-3xl border border-border shadow-elegant mr-8 mt-8">
                 <div className="flex justify-start mb-4">
                   <span className="inline-flex items-center px-4 py-2 bg-primary/10 rounded-full border border-primary/20 text-primary text-sm font-medium">
-                    Vision
+                    {language === 'en' ? 'Vision' : 'الرؤية'}
                   </span>
                 </div>
-                <h2 className="text-3xl font-bold text-primary mb-6 font-heading">Our Vision</h2>
+                <h2 className="text-3xl font-bold text-primary mb-6 font-heading">{t('about.vision.title')}</h2>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  To be Egypt's safe and attractive investment destination through the highest standards of due diligence and compliance, 
-                  accelerating trust and promoting sustainable development.
+                  {t('about.vision.content')}
                 </p>
               </div>
             </div>
@@ -170,7 +158,7 @@ const About = () => {
               <span className="text-white font-medium">Core Values</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-accent mb-8 font-heading">
-              Core Values
+              {t('about.values.title')}
             </h2>
             <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
               Building trust and enabling investors to safely and immediately contribute to strengthening the sustainable economy.
@@ -238,9 +226,9 @@ const About = () => {
               <span className="text-accent font-medium">Management Team</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-primary mb-8 font-heading">
-              Distinguished Leadership
+              {t('about.team.title')}
               <br />
-              <span className="text-accent">Future Vision</span>
+              <span className="text-accent">{language === 'en' ? 'Future Vision' : 'رؤية المستقبل'}</span>
             </h2>
           </div>
 
@@ -257,8 +245,7 @@ const About = () => {
                 <div className="bg-accent/5 px-8 py-4 rounded-2xl border border-accent/10 inline-block mb-4">
                   <h3 className="text-xl font-bold text-foreground font-heading">{member.name}</h3>
                 </div>
-                <p className="text-muted-foreground font-medium">{member.role}</p>
-                <p className="text-sm text-muted-foreground/80 mt-2">{member.roleAr}</p>
+                <p className="text-muted-foreground font-medium">{language === 'en' ? member.role : member.roleAr}</p>
               </div>
             ))}
           </div>

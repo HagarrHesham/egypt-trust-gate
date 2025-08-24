@@ -1,20 +1,22 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Globe, Search, User, Menu, X } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [language, setLanguage] = useState<'en' | 'ar'>('en');
+  const { language, setLanguage, t } = useLanguage();
 
   const toggleLanguage = () => {
-    setLanguage(prev => prev === 'en' ? 'ar' : 'en');
+    setLanguage(language === 'en' ? 'ar' : 'en');
   };
 
   const navItems = [
-    { label: language === 'en' ? 'Due Diligence' : 'العناية الواجبة', href: '#services' },
-    { label: language === 'en' ? 'Field Verification' : 'التحقق الميداني', href: '#verification' },
-    { label: language === 'en' ? 'Reports' : 'التقارير', href: '#reports' },
-    { label: language === 'en' ? 'About' : 'حول', href: '/about' },
+    { label: t('nav.home'), href: '/' },
+    { label: t('nav.about'), href: '/about' },
+    { label: t('nav.services'), href: '#services' },
+    { label: t('nav.contact'), href: '#contact' },
   ];
 
   return (
@@ -22,7 +24,7 @@ const Header = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
+          <Link to="/" className="flex items-center space-x-3">
             <img 
               src="/lovable-uploads/5c73632b-646a-4bab-b94f-3e7e3dd4296e.png" 
               alt="Global Trust Logo" 
@@ -30,24 +32,34 @@ const Header = () => {
             />
             <div>
               <h1 className="text-xl font-bold text-foreground font-heading">
-                {language === 'en' ? 'Global Trust' : 'الثقة العالمية'}
+                Global Trust
               </h1>
               <p className="text-xs text-muted-foreground">
-                {language === 'en' ? 'Your Gateway to Secure Investments' : 'بوابتك للاستثمارات الآمنة'}
+                {t('hero.title')}
               </p>
             </div>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="text-muted-foreground hover:text-foreground transition-colors duration-200 font-medium"
-              >
-                {item.label}
-              </a>
+              item.href.startsWith('#') ? (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="text-muted-foreground hover:text-foreground transition-colors duration-200 font-medium"
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <Link
+                  key={item.href}
+                  to={item.href}
+                  className="text-muted-foreground hover:text-foreground transition-colors duration-200 font-medium"
+                >
+                  {item.label}
+                </Link>
+              )
             ))}
           </nav>
 
@@ -69,7 +81,7 @@ const Header = () => {
             </Button>
 
             <Button size="sm" className="hidden md:block">
-              {language === 'en' ? 'Get Started' : 'ابدأ الآن'}
+              {t('nav.getStarted')}
             </Button>
 
             {/* Mobile Menu Button */}
@@ -89,14 +101,25 @@ const Header = () => {
           <div className="md:hidden mt-4 pb-4 border-t border-border pt-4">
             <nav className="flex flex-col space-y-3">
               {navItems.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className="text-muted-foreground hover:text-foreground transition-colors duration-200 font-medium py-2"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.label}
-                </a>
+                item.href.startsWith('#') ? (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    className="text-muted-foreground hover:text-foreground transition-colors duration-200 font-medium py-2"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={item.href}
+                    to={item.href}
+                    className="text-muted-foreground hover:text-foreground transition-colors duration-200 font-medium py-2"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                )
               ))}
               <div className="flex flex-col space-y-2 pt-4 border-t border-border">
                 <Button variant="outline" size="sm" className="flex items-center justify-center space-x-2">
@@ -104,7 +127,7 @@ const Header = () => {
                   <span>{language === 'en' ? 'Login' : 'تسجيل الدخول'}</span>
                 </Button>
                 <Button size="sm">
-                  {language === 'en' ? 'Get Started' : 'ابدأ الآن'}
+                  {t('nav.getStarted')}
                 </Button>
               </div>
             </nav>

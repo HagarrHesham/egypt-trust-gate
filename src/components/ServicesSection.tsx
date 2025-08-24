@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -26,7 +26,7 @@ import {
 } from "lucide-react";
 
 const ServicesSection = () => {
-  const [language] = useState<'en' | 'ar'>('en');
+  const { language, t } = useLanguage();
 
   const coreServices = [
     {
@@ -198,16 +198,13 @@ const ServicesSection = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <Badge variant="secondary" className="mb-4 px-4 py-2">
-            {language === 'en' ? 'Our Services' : 'خدماتنا'}
+            {t('services.badge')}
           </Badge>
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6 font-heading">
-            {language === 'en' ? 'Comprehensive Due Diligence Solutions' : 'حلول شاملة للعناية الواجبة'}
+            {t('services.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            {language === 'en' 
-              ? 'Choose from our data-driven verification services or comprehensive field verification for complete business intelligence.'
-              : 'اختر من خدمات التحقق المدفوعة بالبيانات أو التحقق الميداني الشامل للحصول على ذكاء أعمال كامل.'
-            }
+            {t('services.subtitle')}
           </p>
         </div>
 
@@ -219,10 +216,10 @@ const ServicesSection = () => {
             </div>
             <div>
               <h3 className="text-2xl font-bold text-foreground font-heading">
-                {language === 'en' ? 'Core Services' : 'الخدمات الأساسية'}
+                {t('services.core.title')}
               </h3>
               <p className="text-muted-foreground">
-                {language === 'en' ? 'Essential due diligence and verification services' : 'خدمات العناية الواجبة والتحقق الأساسية'}
+                {t('services.core.subtitle')}
               </p>
             </div>
           </div>
@@ -255,7 +252,7 @@ const ServicesSection = () => {
                       {service.deliveryTime}
                     </div>
                     <Button size="sm" variant="outline">
-                      {language === 'en' ? 'Request' : 'طلب'}
+                      {t('services.request')}
                     </Button>
                   </div>
                 </CardContent>
@@ -272,10 +269,10 @@ const ServicesSection = () => {
             </div>
             <div>
               <h3 className="text-2xl font-bold text-foreground font-heading">
-                Advanced Services
+                {t('services.advanced.title')}
               </h3>
               <p className="text-muted-foreground">
-                In-depth analysis and comprehensive verification services
+                {t('services.advanced.subtitle')}
               </p>
             </div>
           </div>
@@ -308,7 +305,7 @@ const ServicesSection = () => {
                       {service.deliveryTime}
                     </div>
                     <Button size="sm" variant="outline">
-                      Request
+                      {t('services.request')}
                     </Button>
                   </div>
                 </CardContent>
@@ -325,10 +322,10 @@ const ServicesSection = () => {
             </div>
             <div>
               <h3 className="text-2xl font-bold text-foreground font-heading">
-                Field Services
+                {t('services.field.title')}
               </h3>
               <p className="text-muted-foreground">
-                On-site verification and specialized advisory services
+                {t('services.field.subtitle')}
               </p>
             </div>
           </div>
@@ -361,7 +358,7 @@ const ServicesSection = () => {
                       {service.deliveryTime}
                     </div>
                     <Button size="sm" variant="outline">
-                      Request
+                      {t('services.request')}
                     </Button>
                   </div>
                 </CardContent>
@@ -376,16 +373,13 @@ const ServicesSection = () => {
             <CardContent className="p-8">
               <AlertTriangle className="h-12 w-12 text-primary-foreground mx-auto mb-4" />
               <h3 className="text-2xl font-bold text-primary-foreground mb-4 font-heading">
-                {language === 'en' ? 'Need Custom Due Diligence?' : 'تحتاج عناية واجبة مخصصة؟'}
+                {t('services.cta.title')}
               </h3>
               <p className="text-primary-foreground/90 mb-6">
-                {language === 'en' 
-                  ? 'Contact our experts for tailored solutions combining multiple services for complex verification requirements.'
-                  : 'اتصل بخبرائنا للحصول على حلول مخصصة تجمع بين خدمات متعددة لمتطلبات التحقق المعقدة.'
-                }
+                {t('services.cta.subtitle')}
               </p>
               <Button variant="secondary" size="lg">
-                {language === 'en' ? 'Speak to Expert' : 'تحدث إلى خبير'}
+                {t('services.cta.button')}
               </Button>
             </CardContent>
           </Card>

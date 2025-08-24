@@ -2,11 +2,12 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search, Shield, Globe, TrendingUp, FileText, MapPin } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 import heroBackground from "@/assets/hero-background.jpg";
 
 const HeroSection = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [language] = useState<'en' | 'ar'>('en');
+  const { language, t } = useLanguage();
 
   const features = [
     {
@@ -78,10 +79,7 @@ const HeroSection = () => {
             </h1>
             
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-              {language === 'en' 
-                ? 'Comprehensive background checks, company verification, and investor due diligence services powered by global data networks and local field verification.'
-                : 'فحوصات شاملة للخلفيات، والتحقق من الشركات، وخدمات العناية الواجبة للمستثمرين مدعومة بشبكات البيانات العالمية والتحقق الميداني المحلي.'
-              }
+              {t('hero.subtitle')}
             </p>
 
             {/* Search Interface */}
@@ -117,10 +115,10 @@ const HeroSection = () => {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
               <Button size="lg" className="px-8 py-4 text-lg">
-                {language === 'en' ? 'Start Due Diligence' : 'ابدأ العناية الواجبة'}
+                {t('hero.cta.primary')}
               </Button>
               <Button variant="outline" size="lg" className="px-8 py-4 text-lg">
-                {language === 'en' ? 'View Sample Report' : 'عرض تقرير نموذجي'}
+                {t('hero.cta.secondary')}
               </Button>
             </div>
           </div>
