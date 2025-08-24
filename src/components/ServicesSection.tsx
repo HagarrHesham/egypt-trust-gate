@@ -18,7 +18,11 @@ import {
   Globe,
   UserCheck,
   BarChart3,
-  Briefcase
+  Briefcase,
+  Search,
+  Link,
+  ShieldCheck,
+  FileText
 } from "lucide-react";
 
 const ServicesSection = () => {
@@ -26,103 +30,166 @@ const ServicesSection = () => {
 
   const coreServices = [
     {
-      icon: FileCheck,
-      title: language === 'en' ? 'Credit Reports' : 'تقارير الائتمان',
-      description: language === 'en' ? 'For companies locally and globally' : 'للشركات محلياً وعالمياً',
+      icon: Building,
+      title: 'Basic Company Profiles',
+      description: 'Providing reliable information about Egyptian companies.',
       features: [
-        language === 'en' ? 'Local market credit analysis' : 'تحليل الائتمان في السوق المحلي',
-        language === 'en' ? 'Global financial health assessment' : 'تقييم الصحة المالية العالمية',
-        language === 'en' ? 'Cross-border risk evaluation' : 'تقييم المخاطر عبر الحدود'
+        'Company registration details',
+        'Basic financial overview',
+        'Management structure',
+        'Business activity verification'
       ],
-      price: language === 'en' ? 'From $150' : 'من 150 دولار',
-      deliveryTime: language === 'en' ? '24-48 hours' : '24-48 ساعة'
+      price: 'From $100',
+      deliveryTime: '24-48 hours'
     },
     {
       icon: Scale,
-      title: language === 'en' ? 'Legal Verification' : 'التحقق القانوني',
-      description: language === 'en' ? 'Company registration and regulatory compliance' : 'تسجيل الشركة والامتثال التنظيمي',
+      title: 'Legal & Tax Verification',
+      description: 'Reviewing commercial registration and tax records for compliance.',
       features: [
-        language === 'en' ? 'Corporate registration verification' : 'التحقق من تسجيل الشركات',
-        language === 'en' ? 'Regulatory compliance status' : 'حالة الامتثال التنظيمي',
-        language === 'en' ? 'Legal documentation review' : 'مراجعة الوثائق القانونية'
+        'Commercial registration check',
+        'Tax compliance status',
+        'Legal entity verification',
+        'Regulatory compliance review'
       ],
-      price: language === 'en' ? 'From $120' : 'من 120 دولار',
-      deliveryTime: language === 'en' ? '2-5 days' : '2-5 أيام'
+      price: 'From $150',
+      deliveryTime: '2-3 days'
+    },
+    {
+      icon: FileCheck,
+      title: 'Simplified Reports',
+      description: 'Summarizing the company\'s legal and financial status in an easy-to-read format.',
+      features: [
+        'Executive summary format',
+        'Key findings highlight',
+        'Risk level assessment',
+        'Easy-to-understand format'
+      ],
+      price: 'From $120',
+      deliveryTime: '1-2 days'
     },
     {
       icon: TrendingUp,
-      title: language === 'en' ? 'Risk Assessment' : 'تقييم المخاطر',
-      description: language === 'en' ? 'Financial and commercial risk analysis' : 'تحليل المخاطر المالية والتجارية',
+      title: 'Media Monitoring Services',
+      description: 'Tracking media coverage about companies to enhance transparency.',
       features: [
-        language === 'en' ? 'Financial risk profiling' : 'تحديد المخاطر المالية',
-        language === 'en' ? 'Commercial viability assessment' : 'تقييم الجدوى التجارية',
-        language === 'en' ? 'Market position analysis' : 'تحليل الموقف في السوق'
+        'News and media coverage',
+        'Social media monitoring',
+        'Reputation tracking',
+        'Public sentiment analysis'
       ],
-      price: language === 'en' ? 'From $200' : 'من 200 دولار',
-      deliveryTime: language === 'en' ? '3-7 days' : '3-7 أيام'
-    },
-    {
-      icon: Globe,
-      title: language === 'en' ? 'Industry & Country Reports' : 'تقارير الصناعة والدولة',
-      description: language === 'en' ? 'Tailored to sector or geography' : 'مخصصة للقطاع أو الجغرافيا',
-      features: [
-        language === 'en' ? 'Sector-specific analysis' : 'تحليل خاص بالقطاع',
-        language === 'en' ? 'Country risk assessment' : 'تقييم مخاطر الدولة',
-        language === 'en' ? 'Regional market insights' : 'رؤى السوق الإقليمية'
-      ],
-      price: language === 'en' ? 'From $300' : 'من 300 دولار',
-      deliveryTime: language === 'en' ? '5-10 days' : '5-10 أيام'
+      price: 'From $200',
+      deliveryTime: '3-5 days'
     }
   ];
 
   const advancedServices = [
     {
-      icon: MapPin,
-      title: language === 'en' ? 'On-the-Ground Verification' : 'التحقق الميداني',
-      description: language === 'en' ? 'Through our certified offices and partner network' : 'من خلال مكاتبنا المعتمدة وشبكة الشركاء',
+      icon: Search,
+      title: 'Operational Verification',
+      description: 'Assessing actual company operations, quality certifications, and industry licenses.',
       features: [
-        language === 'en' ? 'Certified office network' : 'شبكة مكاتب معتمدة',
-        language === 'en' ? 'Partner verification services' : 'خدمات التحقق من الشركاء',
-        language === 'en' ? 'Real-time field reports' : 'تقارير ميدانية في الوقت الفعلي'
+        'Operations assessment',
+        'Quality certifications check',
+        'Industry licenses verification',
+        'Facility inspection reports'
       ],
-      price: language === 'en' ? 'From $500' : 'من 500 دولار',
-      deliveryTime: language === 'en' ? '7-14 days' : '7-14 يوم'
+      price: 'From $300',
+      deliveryTime: '5-7 days'
     },
     {
-      icon: UserCheck,
-      title: language === 'en' ? 'Background Checks' : 'فحوصات الخلفية',
-      description: language === 'en' ? 'Comprehensive checks on companies or potential partners' : 'فحوصات شاملة للشركات أو الشركاء المحتملين',
+      icon: Link,
+      title: 'Detailed Supply Chain Audits',
+      description: 'Examining suppliers, business partners, and client networks.',
       features: [
-        language === 'en' ? 'Company history analysis' : 'تحليل تاريخ الشركة',
-        language === 'en' ? 'Management background verification' : 'التحقق من خلفية الإدارة',
-        language === 'en' ? 'Partnership risk assessment' : 'تقييم مخاطر الشراكة'
+        'Supplier verification',
+        'Partner relationship mapping',
+        'Client network analysis',
+        'Supply chain risk assessment'
       ],
-      price: language === 'en' ? 'From $400' : 'من 400 دولار',
-      deliveryTime: language === 'en' ? '5-10 days' : '5-10 أيام'
+      price: 'From $400',
+      deliveryTime: '7-10 days'
+    },
+    {
+      icon: ShieldCheck,
+      title: 'Comprehensive Legal, Financial & Criminal Checks',
+      description: 'In-depth due diligence across all risk areas.',
+      features: [
+        'Legal background verification',
+        'Financial health assessment',
+        'Criminal record checks',
+        'Litigation history review'
+      ],
+      price: 'From $500',
+      deliveryTime: '10-14 days'
+    },
+    {
+      icon: FileText,
+      title: 'Official Document Retrieval',
+      description: 'Providing certified copies of commercial registry and official records.',
+      features: [
+        'Commercial registry documents',
+        'Certified official records',
+        'Legal entity certificates',
+        'Government filing copies'
+      ],
+      price: 'From $250',
+      deliveryTime: '3-5 days'
+    }
+  ];
+
+  const fieldServices = [
+    {
+      icon: MapPin,
+      title: 'On-Site Verification',
+      description: 'Direct company visits with photo-documented reports confirming actual operations.',
+      features: [
+        'Physical site inspection',
+        'Photo-documented reports',
+        'Operations confirmation',
+        'Facility assessment'
+      ],
+      price: 'From $600',
+      deliveryTime: '7-14 days'
     },
     {
       icon: BarChart3,
-      title: language === 'en' ? 'Customized Reports & Analytics' : 'تقارير وتحليلات مخصصة',
-      description: language === 'en' ? 'Designed to meet investors\' unique requirements' : 'مصممة لتلبية متطلبات المستثمرين الفريدة',
+      title: 'Industry-Specific Reports',
+      description: 'Tailored insights based on sector or specific investor needs.',
       features: [
-        language === 'en' ? 'Tailored report formats' : 'تنسيقات تقارير مخصصة',
-        language === 'en' ? 'Advanced data analytics' : 'تحليلات بيانات متقدمة',
-        language === 'en' ? 'Investor-specific insights' : 'رؤى خاصة بالمستثمرين'
+        'Sector-specific analysis',
+        'Industry benchmarking',
+        'Market positioning',
+        'Competitive landscape'
       ],
-      price: language === 'en' ? 'From $600' : 'من 600 دولار',
-      deliveryTime: language === 'en' ? '7-14 days' : '7-14 يوم'
+      price: 'From $450',
+      deliveryTime: '5-10 days'
     },
     {
       icon: Briefcase,
-      title: language === 'en' ? 'Investment Advisory' : 'الاستشارات الاستثمارية',
-      description: language === 'en' ? 'For M&A transactions or market entry strategies' : 'لعمليات الاندماج والاستحواذ أو استراتيجيات دخول السوق',
+      title: 'Investment Advisory',
+      description: 'Guidance for mergers, acquisitions, or market entry strategies.',
       features: [
-        language === 'en' ? 'M&A transaction support' : 'دعم عمليات الاندماج والاستحواذ',
-        language === 'en' ? 'Market entry strategy' : 'استراتيجية دخول السوق',
-        language === 'en' ? 'Investment risk advisory' : 'استشارات مخاطر الاستثمار'
+        'M&A due diligence',
+        'Market entry strategies',
+        'Investment risk analysis',
+        'Strategic recommendations'
       ],
-      price: language === 'en' ? 'From $1,000' : 'من 1000 دولار',
-      deliveryTime: language === 'en' ? '10-21 days' : '10-21 يوم'
+      price: 'From $800',
+      deliveryTime: '10-21 days'
+    },
+    {
+      icon: Shield,
+      title: 'Compliance & Reputation Checks',
+      description: 'Legal record verification, regulatory compliance, reputation assessments, and full-spectrum due diligence.',
+      features: [
+        'Regulatory compliance review',
+        'Reputation assessment',
+        'Legal record verification',
+        'Full-spectrum due diligence'
+      ],
+      price: 'From $550',
+      deliveryTime: '7-12 days'
     }
   ];
 
@@ -160,7 +227,7 @@ const ServicesSection = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {coreServices.map((service, index) => (
               <Card key={index} className="bg-gradient-card border border-border shadow-card hover:shadow-elegant transition-all duration-300">
                 <CardHeader>
@@ -197,23 +264,23 @@ const ServicesSection = () => {
           </div>
         </div>
 
-        {/* Advanced & Field Services */}
-        <div>
+        {/* Advanced Services */}
+        <div className="mb-16">
           <div className="flex items-center mb-8">
             <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mr-4">
-              <MapPin className="h-6 w-6 text-accent" />
+              <Search className="h-6 w-6 text-accent" />
             </div>
             <div>
               <h3 className="text-2xl font-bold text-foreground font-heading">
-                {language === 'en' ? 'Advanced & Field Services' : 'الخدمات المتقدمة والميدانية'}
+                Advanced Services
               </h3>
               <p className="text-muted-foreground">
-                {language === 'en' ? 'Comprehensive verification and strategic advisory services' : 'خدمات التحقق الشاملة والاستشارات الاستراتيجية'}
+                In-depth analysis and comprehensive verification services
               </p>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {advancedServices.map((service, index) => (
               <Card key={index} className="bg-gradient-card border border-border shadow-card hover:shadow-elegant transition-all duration-300">
                 <CardHeader>
@@ -241,7 +308,60 @@ const ServicesSection = () => {
                       {service.deliveryTime}
                     </div>
                     <Button size="sm" variant="outline">
-                      {language === 'en' ? 'Request' : 'طلب'}
+                      Request
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* Field Services */}
+        <div>
+          <div className="flex items-center mb-8">
+            <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mr-4">
+              <MapPin className="h-6 w-6 text-secondary" />
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-foreground font-heading">
+                Field Services
+              </h3>
+              <p className="text-muted-foreground">
+                On-site verification and specialized advisory services
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {fieldServices.map((service, index) => (
+              <Card key={index} className="bg-gradient-card border border-border shadow-card hover:shadow-elegant transition-all duration-300">
+                <CardHeader>
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center">
+                      <service.icon className="h-6 w-6 text-secondary" />
+                    </div>
+                    <Badge variant="outline">{service.price}</Badge>
+                  </div>
+                  <CardTitle className="font-heading">{service.title}</CardTitle>
+                  <CardDescription>{service.description}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2 mb-4">
+                    {service.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-center text-sm text-muted-foreground">
+                        <CheckCircle className="h-4 w-4 text-success mr-2 flex-shrink-0" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center text-sm text-muted-foreground">
+                      <Clock className="h-4 w-4 mr-1" />
+                      {service.deliveryTime}
+                    </div>
+                    <Button size="sm" variant="outline">
+                      Request
                     </Button>
                   </div>
                 </CardContent>
