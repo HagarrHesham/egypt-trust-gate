@@ -37,6 +37,36 @@ const translations = {
     'services.cta.subtitle': 'Contact our experts for tailored solutions combining multiple services for complex verification requirements.',
     'services.cta.button': 'Speak to Expert',
     'services.request': 'Request',
+
+    // Core Services
+    'services.core.basicProfiles.title': 'Basic Company Profiles',
+    'services.core.basicProfiles.desc': 'Providing reliable information about Egyptian companies',
+    'services.core.legalTax.title': 'Legal & Tax Verification',
+    'services.core.legalTax.desc': 'Reviewing commercial registration and tax records for compliance',
+    'services.core.simplified.title': 'Simplified Reports',
+    'services.core.simplified.desc': 'Summarizing the company\'s legal and financial status in an easy-to-read format',
+    'services.core.media.title': 'Media Monitoring Services',
+    'services.core.media.desc': 'Tracking media coverage about companies to enhance transparency',
+
+    // Advanced Services
+    'services.advanced.operational.title': 'Operational Verification',
+    'services.advanced.operational.desc': 'Assessing actual company operations, quality certifications, and industry licenses',
+    'services.advanced.supplyChain.title': 'Detailed Supply Chain Audits',
+    'services.advanced.supplyChain.desc': 'Examining suppliers, business partners, and client networks',
+    'services.advanced.comprehensive.title': 'Comprehensive Legal, Financial & Criminal Checks',
+    'services.advanced.comprehensive.desc': 'In-depth due diligence across all risk areas',
+    'services.advanced.documents.title': 'Official Document Retrieval',
+    'services.advanced.documents.desc': 'Providing certified copies of commercial registry and official records',
+
+    // Field Services
+    'services.field.onSite.title': 'On-Site Verification',
+    'services.field.onSite.desc': 'Direct company visits with photo-documented reports confirming actual operations',
+    'services.field.industrySpecific.title': 'Industry-Specific Reports',
+    'services.field.industrySpecific.desc': 'Tailored insights based on sector or specific investor needs',
+    'services.field.investment.title': 'Investment Advisory',
+    'services.field.investment.desc': 'Guidance for mergers, acquisitions, or market entry strategies',
+    'services.field.compliance.title': 'Compliance & Reputation Checks',
+    'services.field.compliance.desc': 'Legal record verification, regulatory compliance, reputation assessments, and full-spectrum due diligence',
     
     // Footer
     'footer.tagline': 'Empowering informed business decisions through comprehensive due diligence and verification services.',
@@ -95,6 +125,36 @@ const translations = {
     'services.cta.subtitle': 'اتصل بخبرائنا للحصول على حلول مخصصة تجمع بين خدمات متعددة لمتطلبات التحقق المعقدة.',
     'services.cta.button': 'تحدث إلى خبير',
     'services.request': 'طلب',
+
+    // Core Services
+    'services.core.basicProfiles.title': 'التقارير التعريفية الأساسية',
+    'services.core.basicProfiles.desc': 'تقديم معلومات موثوقة عن الشركات المصرية',
+    'services.core.legalTax.title': 'التحقق القانوني والضريبي',
+    'services.core.legalTax.desc': 'مراجعة السجل التجاري والبطاقة الضريبية للتأكد من الامتثال',
+    'services.core.simplified.title': 'التقارير المبسطة',
+    'services.core.simplified.desc': 'رصد الوضع القانوني والمالي للشركات بشكل مختصر وسهل الفهم',
+    'services.core.media.title': 'خدمات البحث والرصد الإعلامي',
+    'services.core.media.desc': 'متابعة ما ينشر عن الشركات في وسائل الإعلام المختلفة لتعزيز الشفافية',
+
+    // Advanced Services
+    'services.advanced.operational.title': 'التحقق من التشغيل الفعلي وتراخيص الجودة',
+    'services.advanced.operational.desc': 'التحقق من التشغيل الفعلي وتراخيص الجودة والصناعة والتشغيل للشركات',
+    'services.advanced.supplyChain.title': 'فحص تفصيلي لسلاسل التوريد',
+    'services.advanced.supplyChain.desc': 'فحص تفصيلي لسلاسل التوريد والشركاء التجاريين والعملاء',
+    'services.advanced.comprehensive.title': 'تغطية الجوانب القانونية والمالية والجنائية',
+    'services.advanced.comprehensive.desc': 'تغطية الجوانب القانونية والمالية والجنائية بشكل تفصيلي',
+    'services.advanced.documents.title': 'خدمة استخراج النسخ الرسمية',
+    'services.advanced.documents.desc': 'خدمة استخراج النسخ الرسمية من السجلات التجاري',
+
+    // Field Services
+    'services.field.onSite.title': 'التحقق الميداني من مقر الشركة',
+    'services.field.onSite.desc': 'التحقق الميداني من مقر الشركة عبر زيارة مباشرة وتقرير مصوّر يثبت النشاط الفعلي',
+    'services.field.industrySpecific.title': 'التقارير المتخصصة حسب الصناعة',
+    'services.field.industrySpecific.desc': 'التقارير المتخصصة حسب الصناعة أو وفق احتياجات المستثمر',
+    'services.field.investment.title': 'الاستشارات الاستثمارية',
+    'services.field.investment.desc': 'الاستشارات الاستثمارية لصفقات الدمج والاستحواذ أو الدخول لأسواق جديدة',
+    'services.field.compliance.title': 'التحقق من السجلات القانونية والامتثال',
+    'services.field.compliance.desc': 'التحقق من السجلات القانونية والامتثال التنظيمي وتقارير السمعة والعناية الواجبه بانوعها',
     
     // Footer
     'footer.tagline': 'تمكين القرارات التجارية المدروسة من خلال خدمات العناية الواجبة والتحقق الشاملة.',

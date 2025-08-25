@@ -31,8 +31,8 @@ const ServicesSection = () => {
   const coreServices = [
     {
       icon: Building,
-      title: 'Basic Company Profiles',
-      description: 'Providing reliable information about Egyptian companies.',
+      title: t('services.core.basicProfiles.title'),
+      description: t('services.core.basicProfiles.desc'),
       features: [
         'Company registration details',
         'Basic financial overview',
@@ -44,8 +44,8 @@ const ServicesSection = () => {
     },
     {
       icon: Scale,
-      title: 'Legal & Tax Verification',
-      description: 'Reviewing commercial registration and tax records for compliance.',
+      title: t('services.core.legalTax.title'),
+      description: t('services.core.legalTax.desc'),
       features: [
         'Commercial registration check',
         'Tax compliance status',
@@ -57,8 +57,8 @@ const ServicesSection = () => {
     },
     {
       icon: FileCheck,
-      title: 'Simplified Reports',
-      description: 'Summarizing the company\'s legal and financial status in an easy-to-read format.',
+      title: t('services.core.simplified.title'),
+      description: t('services.core.simplified.desc'),
       features: [
         'Executive summary format',
         'Key findings highlight',
@@ -70,8 +70,8 @@ const ServicesSection = () => {
     },
     {
       icon: TrendingUp,
-      title: 'Media Monitoring Services',
-      description: 'Tracking media coverage about companies to enhance transparency.',
+      title: t('services.core.media.title'),
+      description: t('services.core.media.desc'),
       features: [
         'News and media coverage',
         'Social media monitoring',
@@ -86,8 +86,8 @@ const ServicesSection = () => {
   const advancedServices = [
     {
       icon: Search,
-      title: 'Operational Verification',
-      description: 'Assessing actual company operations, quality certifications, and industry licenses.',
+      title: t('services.advanced.operational.title'),
+      description: t('services.advanced.operational.desc'),
       features: [
         'Operations assessment',
         'Quality certifications check',
@@ -99,8 +99,8 @@ const ServicesSection = () => {
     },
     {
       icon: Link,
-      title: 'Detailed Supply Chain Audits',
-      description: 'Examining suppliers, business partners, and client networks.',
+      title: t('services.advanced.supplyChain.title'),
+      description: t('services.advanced.supplyChain.desc'),
       features: [
         'Supplier verification',
         'Partner relationship mapping',
@@ -112,8 +112,8 @@ const ServicesSection = () => {
     },
     {
       icon: ShieldCheck,
-      title: 'Comprehensive Legal, Financial & Criminal Checks',
-      description: 'In-depth due diligence across all risk areas.',
+      title: t('services.advanced.comprehensive.title'),
+      description: t('services.advanced.comprehensive.desc'),
       features: [
         'Legal background verification',
         'Financial health assessment',
@@ -125,8 +125,8 @@ const ServicesSection = () => {
     },
     {
       icon: FileText,
-      title: 'Official Document Retrieval',
-      description: 'Providing certified copies of commercial registry and official records.',
+      title: t('services.advanced.documents.title'),
+      description: t('services.advanced.documents.desc'),
       features: [
         'Commercial registry documents',
         'Certified official records',
@@ -141,8 +141,8 @@ const ServicesSection = () => {
   const fieldServices = [
     {
       icon: MapPin,
-      title: 'On-Site Verification',
-      description: 'Direct company visits with photo-documented reports confirming actual operations.',
+      title: t('services.field.onSite.title'),
+      description: t('services.field.onSite.desc'),
       features: [
         'Physical site inspection',
         'Photo-documented reports',
@@ -154,8 +154,8 @@ const ServicesSection = () => {
     },
     {
       icon: BarChart3,
-      title: 'Industry-Specific Reports',
-      description: 'Tailored insights based on sector or specific investor needs.',
+      title: t('services.field.industrySpecific.title'),
+      description: t('services.field.industrySpecific.desc'),
       features: [
         'Sector-specific analysis',
         'Industry benchmarking',
@@ -167,8 +167,8 @@ const ServicesSection = () => {
     },
     {
       icon: Briefcase,
-      title: 'Investment Advisory',
-      description: 'Guidance for mergers, acquisitions, or market entry strategies.',
+      title: t('services.field.investment.title'),
+      description: t('services.field.investment.desc'),
       features: [
         'M&A due diligence',
         'Market entry strategies',
@@ -180,8 +180,8 @@ const ServicesSection = () => {
     },
     {
       icon: Shield,
-      title: 'Compliance & Reputation Checks',
-      description: 'Legal record verification, regulatory compliance, reputation assessments, and full-spectrum due diligence.',
+      title: t('services.field.compliance.title'),
+      description: t('services.field.compliance.desc'),
       features: [
         'Regulatory compliance review',
         'Reputation assessment',
