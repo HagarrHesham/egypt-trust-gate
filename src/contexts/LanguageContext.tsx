@@ -145,24 +145,24 @@ const translations = {
     'services.request': 'طلب',
 
     // Core Services
-    'services.core.basicProfiles.title': 'التقارير التعريفية الأساسية',
-    'services.core.basicProfiles.desc': 'تقديم معلومات موثوقة عن الشركات المصرية',
-    'services.core.legalTax.title': 'التحقق القانوني والضريبي',
-    'services.core.legalTax.desc': 'مراجعة السجل التجاري والبطاقة الضريبية للتأكد من الامتثال',
-    'services.core.simplified.title': 'التقارير المبسطة',
-    'services.core.simplified.desc': 'رصد الوضع القانوني والمالي للشركات بشكل مختصر وسهل الفهم',
-    'services.core.media.title': 'خدمات البحث والرصد الإعلامي',
-    'services.core.media.desc': 'متابعة ما ينشر عن الشركات في وسائل الإعلام المختلفة لتعزيز الشفافية',
+    'services.core.basicProfiles.title': 'تقارير تعريفية أساسية',
+    'services.core.basicProfiles.desc': 'تقارير تعريفية أساسية عن الشركات المصرية.',
+    'services.core.legalTax.title': 'التحقق من السجل التجاري والضريبي',
+    'services.core.legalTax.desc': 'التحقق من السجل التجاري والضريبي.',
+    'services.core.simplified.title': 'تقارير مبسطة',
+    'services.core.simplified.desc': 'تقارير مبسطة عن الوضع القانوني والمالي للشركة.',
+    'services.core.media.title': 'مراجعة أولية للامتثال',
+    'services.core.media.desc': 'مراجعة أولية لمستوى الامتثال والتنظيم.',
 
     // Advanced Services
     'services.advanced.operational.title': 'التحقق من التشغيل الفعلي وتراخيص الجودة',
-    'services.advanced.operational.desc': 'التحقق من التشغيل الفعلي وتراخيص الجودة والصناعة والتشغيل للشركات',
+    'services.advanced.operational.desc': 'التحقق من التشغيل الفعلي وتراخيص الجودة والصناعة والتشغيل.',
     'services.advanced.supplyChain.title': 'فحص تفصيلي لسلاسل التوريد',
-    'services.advanced.supplyChain.desc': 'فحص تفصيلي لسلاسل التوريد والشركاء التجاريين والعملاء',
+    'services.advanced.supplyChain.desc': 'فحص تفصيلي لسلاسل التوريد والشركاء التجاريين والعملاء.',
     'services.advanced.comprehensive.title': 'تغطية الجوانب القانونية والمالية والجنائية',
-    'services.advanced.comprehensive.desc': 'تغطية الجوانب القانونية والمالية والجنائية بشكل تفصيلي',
+    'services.advanced.comprehensive.desc': 'تغطية الجوانب القانونية والمالية والجنائية بشكل تفصيلي.',
     'services.advanced.documents.title': 'خدمة استخراج النسخ الرسمية',
-    'services.advanced.documents.desc': 'خدمة استخراج النسخ الرسمية من السجلات التجاري',
+    'services.advanced.documents.desc': 'خدمة استخراج النسخ الرسمية من السجلات التجارية.',
 
     // Advanced Services Features
     'services.advanced.operational.feature1': 'تفاصيل تسجيل الشركة',
@@ -184,13 +184,13 @@ const translations = {
 
     // Field Services
     'services.field.onSite.title': 'التحقق الميداني من مقر الشركة',
-    'services.field.onSite.desc': 'التحقق الميداني من مقر الشركة عبر زيارة مباشرة وتقرير مصوّر يثبت النشاط الفعلي',
+    'services.field.onSite.desc': 'التحقق الميداني من مقر الشركة عبر زيارة مباشرة وتقرير مصوّر يثبت النشاط الفعلي.',
     'services.field.industrySpecific.title': 'التقارير المتخصصة حسب الصناعة',
-    'services.field.industrySpecific.desc': 'التقارير المتخصصة حسب الصناعة أو وفق احتياجات المستثمر',
+    'services.field.industrySpecific.desc': 'التقارير المتخصصة حسب الصناعة أو وفق احتياجات المستثمر.',
     'services.field.investment.title': 'الاستشارات الاستثمارية',
-    'services.field.investment.desc': 'الاستشارات الاستثمارية لصفقات الدمج والاستحواذ أو الدخول لأسواق جديدة',
+    'services.field.investment.desc': 'الاستشارات الاستثمارية لصفقات الدمج والاستحواذ أو الدخول لأسواق جديدة.',
     'services.field.compliance.title': 'التحقق من السجلات القانونية والامتثال',
-    'services.field.compliance.desc': 'التحقق من السجلات القانونية والامتثال التنظيمي وتقارير السمعة والعناية الواجبه بانوعها',
+    'services.field.compliance.desc': 'التحقق من السجلات القانونية والامتثال التنظيمي وتقارير السمعة والعناية الواجبة.',
     
     // Footer
     'footer.tagline': 'تمكين القرارات التجارية المدروسة من خلال خدمات العناية الواجبة والتحقق الشاملة.',
