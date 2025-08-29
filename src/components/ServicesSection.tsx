@@ -89,10 +89,10 @@ const ServicesSection = () => {
       title: t('services.advanced.operational.title'),
       description: t('services.advanced.operational.desc'),
       features: [
-        'Operations assessment',
-        'Quality certifications check',
-        'Industry licenses verification',
-        'Facility inspection reports'
+        t('services.advanced.operational.feature1'),
+        t('services.advanced.operational.feature2'),
+        t('services.advanced.operational.feature3'),
+        t('services.advanced.operational.feature4')
       ],
       price: 'From $300',
       deliveryTime: '5-7 days'
@@ -102,10 +102,10 @@ const ServicesSection = () => {
       title: t('services.advanced.supplyChain.title'),
       description: t('services.advanced.supplyChain.desc'),
       features: [
-        'Supplier verification',
-        'Partner relationship mapping',
-        'Client network analysis',
-        'Supply chain risk assessment'
+        t('services.advanced.supplyChain.feature1'),
+        t('services.advanced.supplyChain.feature2'),
+        t('services.advanced.supplyChain.feature3'),
+        t('services.advanced.supplyChain.feature4')
       ],
       price: 'From $400',
       deliveryTime: '7-10 days'
@@ -115,10 +115,10 @@ const ServicesSection = () => {
       title: t('services.advanced.comprehensive.title'),
       description: t('services.advanced.comprehensive.desc'),
       features: [
-        'Legal background verification',
-        'Financial health assessment',
-        'Criminal record checks',
-        'Litigation history review'
+        t('services.advanced.comprehensive.feature1'),
+        t('services.advanced.comprehensive.feature2'),
+        t('services.advanced.comprehensive.feature3'),
+        t('services.advanced.comprehensive.feature4')
       ],
       price: 'From $500',
       deliveryTime: '10-14 days'
@@ -128,10 +128,10 @@ const ServicesSection = () => {
       title: t('services.advanced.documents.title'),
       description: t('services.advanced.documents.desc'),
       features: [
-        'Commercial registry documents',
-        'Certified official records',
-        'Legal entity certificates',
-        'Government filing copies'
+        t('services.advanced.documents.feature1'),
+        t('services.advanced.documents.feature2'),
+        t('services.advanced.documents.feature3'),
+        t('services.advanced.documents.feature4')
       ],
       price: 'From $250',
       deliveryTime: '3-5 days'

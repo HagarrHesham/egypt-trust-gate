@@ -58,6 +58,24 @@ const translations = {
     'services.advanced.documents.title': 'Official Document Retrieval',
     'services.advanced.documents.desc': 'Providing certified copies of commercial registry and official records',
 
+    // Advanced Services Features
+    'services.advanced.operational.feature1': 'Company registration details',
+    'services.advanced.operational.feature2': 'Basic financial data overview',
+    'services.advanced.operational.feature3': 'Management structure',
+    'services.advanced.operational.feature4': 'Business activity verification',
+    'services.advanced.supplyChain.feature1': 'Supplier verification',
+    'services.advanced.supplyChain.feature2': 'Partner relationship mapping',
+    'services.advanced.supplyChain.feature3': 'Client network analysis',
+    'services.advanced.supplyChain.feature4': 'Supply chain risk assessment',
+    'services.advanced.comprehensive.feature1': 'Legal background verification',
+    'services.advanced.comprehensive.feature2': 'Financial health assessment',
+    'services.advanced.comprehensive.feature3': 'Criminal record checks',
+    'services.advanced.comprehensive.feature4': 'Litigation history review',
+    'services.advanced.documents.feature1': 'Commercial registry documents',
+    'services.advanced.documents.feature2': 'Certified official records',
+    'services.advanced.documents.feature3': 'Legal entity certificates',
+    'services.advanced.documents.feature4': 'Government filing copies',
+
     // Field Services
     'services.field.onSite.title': 'On-Site Verification',
     'services.field.onSite.desc': 'Direct company visits with photo-documented reports confirming actual operations',
@@ -145,6 +163,24 @@ const translations = {
     'services.advanced.comprehensive.desc': 'تغطية الجوانب القانونية والمالية والجنائية بشكل تفصيلي',
     'services.advanced.documents.title': 'خدمة استخراج النسخ الرسمية',
     'services.advanced.documents.desc': 'خدمة استخراج النسخ الرسمية من السجلات التجاري',
+
+    // Advanced Services Features
+    'services.advanced.operational.feature1': 'تفاصيل تسجيل الشركة',
+    'services.advanced.operational.feature2': 'نظرة عامة على البيانات المالية الأساسية',
+    'services.advanced.operational.feature3': 'الهيكل الإداري',
+    'services.advanced.operational.feature4': 'التحقق من نشاط الشركة',
+    'services.advanced.supplyChain.feature1': 'التحقق من الموردين',
+    'services.advanced.supplyChain.feature2': 'رسم خريطة علاقات الشركاء',
+    'services.advanced.supplyChain.feature3': 'تحليل شبكة العملاء',
+    'services.advanced.supplyChain.feature4': 'تقييم مخاطر سلسلة التوريد',
+    'services.advanced.comprehensive.feature1': 'التحقق من الخلفية القانونية',
+    'services.advanced.comprehensive.feature2': 'تقييم الصحة المالية',
+    'services.advanced.comprehensive.feature3': 'فحص السجل الجنائي',
+    'services.advanced.comprehensive.feature4': 'مراجعة تاريخ الدعاوى القضائية',
+    'services.advanced.documents.feature1': 'مستندات السجل التجاري',
+    'services.advanced.documents.feature2': 'السجلات الرسمية الموثقة',
+    'services.advanced.documents.feature3': 'شهادات الكيان القانوني',
+    'services.advanced.documents.feature4': 'نسخ من الإيداعات الحكومية',
 
     // Field Services
     'services.field.onSite.title': 'التحقق الميداني من مقر الشركة',
