@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -24,9 +25,25 @@ import {
   ShieldCheck,
   FileText
 } from "lucide-react";
+import CompanyRequestModal from "./CompanyRequestModal";
 
 const ServicesSection = () => {
   const { language, t } = useLanguage();
+  const [requestModal, setRequestModal] = useState<{
+    isOpen: boolean;
+    service: any;
+  }>({ isOpen: false, service: null });
+
+  const handleServiceRequest = (service: any) => {
+    setRequestModal({
+      isOpen: true,
+      service: {
+        type: service.title,
+        price: service.price,
+        description: service.description
+      }
+    });
+  };
 
   const coreServices = [
     {
@@ -251,7 +268,7 @@ const ServicesSection = () => {
                       <Clock className="h-4 w-4 mr-1" />
                       {service.deliveryTime}
                     </div>
-                    <Button size="sm" variant="outline">
+                    <Button size="sm" variant="outline" onClick={() => handleServiceRequest(service)}>
                       {t('services.request')}
                     </Button>
                   </div>
@@ -304,7 +321,7 @@ const ServicesSection = () => {
                       <Clock className="h-4 w-4 mr-1" />
                       {service.deliveryTime}
                     </div>
-                    <Button size="sm" variant="outline">
+                    <Button size="sm" variant="outline" onClick={() => handleServiceRequest(service)}>
                       {t('services.request')}
                     </Button>
                   </div>
@@ -357,7 +374,7 @@ const ServicesSection = () => {
                       <Clock className="h-4 w-4 mr-1" />
                       {service.deliveryTime}
                     </div>
-                    <Button size="sm" variant="outline">
+                    <Button size="sm" variant="outline" onClick={() => handleServiceRequest(service)}>
                       {t('services.request')}
                     </Button>
                   </div>
@@ -384,6 +401,12 @@ const ServicesSection = () => {
             </CardContent>
           </Card>
         </div>
+
+        <CompanyRequestModal
+          isOpen={requestModal.isOpen}
+          onClose={() => setRequestModal({ isOpen: false, service: null })}
+          selectedService={requestModal.service}
+        />
       </div>
     </section>
   );
