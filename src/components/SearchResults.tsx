@@ -1,8 +1,10 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Shield, Zap, MapPin, Clock, DollarSign } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import PaymentModal from "./PaymentModal";
 
 interface SearchResultsProps {
   searchTerm: string;
@@ -11,6 +13,19 @@ interface SearchResultsProps {
 
 const SearchResults = ({ searchTerm, onClose }: SearchResultsProps) => {
   const { language } = useLanguage();
+  const [paymentModal, setPaymentModal] = useState<{
+    isOpen: boolean;
+    service: any;
+    companyName: string;
+  }>({ isOpen: false, service: null, companyName: '' });
+
+  const handleRequestReport = (service: any) => {
+    setPaymentModal({
+      isOpen: true,
+      service,
+      companyName: searchTerm
+    });
+  };
 
   const searchResults = [
     {
@@ -128,13 +143,24 @@ const SearchResults = ({ searchTerm, onClose }: SearchResultsProps) => {
             </CardContent>
 
             <CardFooter>
-              <Button className="w-full" size="lg">
+              <Button 
+                className="w-full" 
+                size="lg"
+                onClick={() => handleRequestReport(service)}
+              >
                 {language === 'en' ? 'Request Report' : 'طلب التقرير'}
               </Button>
             </CardFooter>
           </Card>
         ))}
       </div>
+
+      <PaymentModal
+        isOpen={paymentModal.isOpen}
+        onClose={() => setPaymentModal({ isOpen: false, service: null, companyName: '' })}
+        service={paymentModal.service}
+        companyName={paymentModal.companyName}
+      />
     </div>
   );
 };
