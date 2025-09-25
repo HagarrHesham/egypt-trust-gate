@@ -27,6 +27,9 @@ const PaymentModal = ({ isOpen, onClose, service, companyName }: PaymentModalPro
   const [selectedMethod, setSelectedMethod] = useState<string>('');
   const [isProcessing, setIsProcessing] = useState(false);
 
+  // Don't render if service is null
+  if (!service) return null;
+
   const paymentMethods = [
     {
       id: 'card',
