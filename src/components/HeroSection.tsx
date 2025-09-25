@@ -4,9 +4,11 @@ import { Input } from "@/components/ui/input";
 import { Search, Shield, Globe, TrendingUp, FileText, MapPin } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import heroBackground from "@/assets/hero-background.jpg";
+import SearchResults from "./SearchResults";
 
 const HeroSection = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [showResults, setShowResults] = useState(false);
   const { language, t } = useLanguage();
 
   const features = [
@@ -34,9 +36,13 @@ const HeroSection = () => {
 
   const handleSearch = () => {
     if (searchTerm.trim()) {
-      console.log("Searching for:", searchTerm);
-      // Here we would implement actual search functionality
+      setShowResults(true);
     }
+  };
+
+  const handleCloseResults = () => {
+    setShowResults(false);
+    setSearchTerm("");
   };
 
   return (
@@ -111,6 +117,14 @@ const HeroSection = () => {
                 }
               </p>
             </div>
+
+            {/* Search Results */}
+            {showResults && (
+              <SearchResults 
+                searchTerm={searchTerm} 
+                onClose={handleCloseResults}
+              />
+            )}
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
