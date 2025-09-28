@@ -9,28 +9,28 @@ import SearchResults from "./SearchResults";
 const HeroSection = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [showResults, setShowResults] = useState(false);
-  const { language, t } = useLanguage();
+  const { t } = useLanguage();
 
   const features = [
     {
       icon: Shield,
-      title: language === 'en' ? 'Trusted Verification' : 'التحقق الموثوق',
-      description: language === 'en' ? 'Global compliance screening' : 'فحص الامتثال العالمي'
+      title: 'Trusted Verification',
+      description: 'Global compliance screening'
     },
     {
       icon: Globe,
-      title: language === 'en' ? 'Global Coverage' : 'التغطية العالمية',
-      description: language === 'en' ? 'Local presence worldwide' : 'وجود محلي في جميع أنحاء العالم'
+      title: 'Global Coverage',
+      description: 'Local presence worldwide'
     },
     {
       icon: TrendingUp,
-      title: language === 'en' ? 'Real-time Data' : 'البيانات الفورية',
-      description: language === 'en' ? 'Live financial insights' : 'رؤى مالية مباشرة'
+      title: 'Real-time Data',
+      description: 'Live financial insights'
     },
     {
       icon: FileText,
-      title: language === 'en' ? 'Detailed Reports' : 'تقارير مفصلة',
-      description: language === 'en' ? 'Comprehensive analysis' : 'تحليل شامل'
+      title: 'Detailed Reports',
+      description: 'Comprehensive analysis'
     }
   ];
 
@@ -64,24 +64,14 @@ const HeroSection = () => {
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-6">
               <MapPin className="h-4 w-4 text-accent mr-2" />
               <span className="text-sm font-medium text-accent">
-                {language === 'en' ? 'Operating in 50+ Countries' : 'نعمل في أكثر من 50 دولة'}
+                Operating in 50+ Countries
               </span>
             </div>
             
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 font-heading leading-tight">
-              {language === 'en' ? (
-                <>
-                  <span className="bg-gradient-primary bg-clip-text text-transparent">Global Trust</span>
-                  <br />
-                  Due Diligence Platform
-                </>
-              ) : (
-                <>
-                  <span className="bg-gradient-primary bg-clip-text text-transparent">منصة الثقة العالمية</span>
-                  <br />
-                  للعناية الواجبة
-                </>
-              )}
+              <span className="bg-gradient-primary bg-clip-text text-transparent">Global Trust</span>
+              <br />
+              Due Diligence Platform
             </h1>
             
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
@@ -93,7 +83,7 @@ const HeroSection = () => {
               <div className="relative">
                 <div className="flex rounded-xl border border-border bg-card shadow-card overflow-hidden">
                   <Input
-                    placeholder={language === 'en' ? "Search for companies, individuals, or entities..." : "البحث عن الشركات أو الأفراد أو الكيانات..."}
+                    placeholder="Search for companies, individuals, or entities..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     className="border-0 bg-transparent text-lg py-6 px-6 focus-visible:ring-0 focus-visible:ring-offset-0"
@@ -105,16 +95,13 @@ const HeroSection = () => {
                     size="lg"
                   >
                     <Search className="h-5 w-5 mr-2" />
-                    {language === 'en' ? 'Search' : 'بحث'}
+                    Search
                   </Button>
                 </div>
               </div>
               
               <p className="text-sm text-muted-foreground mt-3">
-                {language === 'en' 
-                  ? 'Try searching: "Apple Inc", "ADNOC", or any company name'
-                  : 'جرب البحث: "شركة آبل"، "أدنوك"، أو أي اسم شركة'
-                }
+                Try searching: "Apple Inc", "ADNOC", or any company name
               </p>
             </div>
 

@@ -28,7 +28,7 @@ import {
 import CompanyRequestModal from "./CompanyRequestModal";
 
 const ServicesSection = () => {
-  const { language, t } = useLanguage();
+  const { t } = useLanguage();
   const [requestModal, setRequestModal] = useState<{
     isOpen: boolean;
     service: any;

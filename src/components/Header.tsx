@@ -1,16 +1,12 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Globe, Search, User, Menu, X } from "lucide-react";
+import { User, Menu, X } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { language, setLanguage, t } = useLanguage();
-
-  const toggleLanguage = () => {
-    setLanguage(language === 'en' ? 'ar' : 'en');
-  };
+  const { t } = useLanguage();
 
   const navItems = [
     { label: t('nav.home'), href: '/' },
@@ -65,19 +61,9 @@ const Header = () => {
 
           {/* Right Actions */}
           <div className="flex items-center space-x-4">
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={toggleLanguage}
-              className="flex items-center space-x-2"
-            >
-              <Globe className="h-4 w-4" />
-              <span>{language === 'en' ? 'العربية' : 'English'}</span>
-            </Button>
-            
             <Button variant="outline" size="sm" className="hidden md:flex items-center space-x-2">
               <User className="h-4 w-4" />
-              <span>{language === 'en' ? 'Login' : 'تسجيل الدخول'}</span>
+              <span>Login</span>
             </Button>
 
             <Button size="sm" className="hidden md:block">
@@ -124,7 +110,7 @@ const Header = () => {
               <div className="flex flex-col space-y-2 pt-4 border-t border-border">
                 <Button variant="outline" size="sm" className="flex items-center justify-center space-x-2">
                   <User className="h-4 w-4" />
-                  <span>{language === 'en' ? 'Login' : 'تسجيل الدخول'}</span>
+                  <span>Login</span>
                 </Button>
                 <Button size="sm">
                   {t('nav.getStarted')}

@@ -1,10 +1,10 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Shield, Eye, Target, Users, Lightbulb, Heart, Award, Globe2 } from "lucide-react";
+import { Shield, Eye, Target, Users, Lightbulb, Award, Globe2 } from "lucide-react";
 
 const About = () => {
-  const { language, t } = useLanguage();
+  const { t } = useLanguage();
 
   const coreValues = [
     {
@@ -33,26 +33,6 @@ const About = () => {
     }
   ];
 
-  const teamMembers = [
-    {
-      name: "Ahmed Hesham",
-      role: "Partnerships & Data Analysis Specialist", 
-      roleAr: "مسؤول بناء شبكة العلاقات وتحليل البيانات",
-      image: "/lovable-uploads/d34bef7e-db28-41ce-9bff-0f360d9e0d9e.png"
-    },
-    {
-      name: "Alaa Hesham",
-      role: "Risk Management & Due Diligence Specialist",
-      roleAr: "مسؤول إدارة المخاطر وال Due Diligence",
-      image: "/lovable-uploads/d34bef7e-db28-41ce-9bff-0f360d9e0d9e.png"
-    },
-    {
-      name: "Hagar Hesham", 
-      role: "Technology & Operations Specialist",
-      roleAr: "مسؤول العمليات والتشغيل التقني",
-      image: "/lovable-uploads/d34bef7e-db28-41ce-9bff-0f360d9e0d9e.png"
-    }
-  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -77,7 +57,7 @@ const About = () => {
               {t('about.hero.subtitle')}
             </p>
             <div className="inline-flex items-center px-6 py-3 bg-white/10 rounded-full border border-white/20 backdrop-blur-sm">
-              <span className="text-white/90 text-lg">{language === 'en' ? 'Who We Are' : 'من نحن'}</span>
+              <span className="text-white/90 text-lg">Who We Are</span>
               <div className="ml-3 w-2 h-2 bg-white rounded-full animate-pulse"></div>
             </div>
           </div>
@@ -97,7 +77,7 @@ const About = () => {
               <div className="bg-card p-8 rounded-3xl border border-border shadow-elegant ml-8 mt-8">
                 <div className="flex justify-end mb-4">
                   <span className="inline-flex items-center px-4 py-2 bg-accent/10 rounded-full border border-accent/20 text-accent text-sm font-medium">
-                    {language === 'en' ? 'Mission' : 'المهمة'}
+                    Mission
                   </span>
                 </div>
                 <h2 className="text-3xl font-bold text-accent mb-6 font-heading">{t('about.mission.title')}</h2>
@@ -115,7 +95,7 @@ const About = () => {
               <div className="bg-card p-8 rounded-3xl border border-border shadow-elegant mr-8 mt-8">
                 <div className="flex justify-start mb-4">
                   <span className="inline-flex items-center px-4 py-2 bg-primary/10 rounded-full border border-primary/20 text-primary text-sm font-medium">
-                    {language === 'en' ? 'Vision' : 'الرؤية'}
+                    Vision
                   </span>
                 </div>
                 <h2 className="text-3xl font-bold text-primary mb-6 font-heading">{t('about.vision.title')}</h2>
@@ -218,39 +198,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Leadership Team Section */}
-      <section className="py-20 bg-gradient-to-br from-background via-muted/20 to-background">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center px-6 py-3 bg-accent/10 rounded-full border border-accent/20 mb-8">
-              <span className="text-accent font-medium">Management Team</span>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-8 font-heading">
-              {t('about.team.title')}
-              <br />
-              <span className="text-accent">{language === 'en' ? 'Future Vision' : 'رؤية المستقبل'}</span>
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {teamMembers.map((member, index) => (
-              <div key={index} className="text-center group">
-                <div className="relative mb-6">
-                  <div className="w-48 h-48 mx-auto rounded-3xl overflow-hidden bg-muted shadow-elegant group-hover:shadow-glow transition-all duration-300">
-                    <div className="w-full h-full bg-gradient-to-br from-muted-foreground/20 to-muted-foreground/40 flex items-center justify-center">
-                      <Users className="h-16 w-16 text-muted-foreground/60" />
-                    </div>
-                  </div>
-                </div>
-                <div className="bg-accent/5 px-8 py-4 rounded-2xl border border-accent/10 inline-block mb-4">
-                  <h3 className="text-xl font-bold text-foreground font-heading">{member.name}</h3>
-                </div>
-                <p className="text-muted-foreground font-medium">{language === 'en' ? member.role : member.roleAr}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       <Footer />
     </div>

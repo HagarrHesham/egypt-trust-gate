@@ -5,7 +5,7 @@ import { Search, Mail, Phone, MapPin, Globe, Linkedin, Twitter } from "lucide-re
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
-  const { language, t } = useLanguage();
+  const { t } = useLanguage();
   const [email, setEmail] = useState("");
 
   const handleSubscribe = () => {
@@ -15,183 +15,158 @@ const Footer = () => {
     }
   };
 
-  const footerSections = [
-    {
-      title: t('footer.services'),
-      links: [
-        { label: language === 'en' ? 'Due Diligence' : 'العناية الواجبة', href: '#' },
-        { label: language === 'en' ? 'Credit Reports' : 'تقارير الائتمان', href: '#' },
-        { label: language === 'en' ? 'Field Verification' : 'التحقق الميداني', href: '#' },
-        { label: language === 'en' ? 'Sanctions Screening' : 'فحص العقوبات', href: '#' }
-      ]
-    },
-    {
-      title: language === 'en' ? 'Company' : 'الشركة',
-      links: [
-        { label: t('nav.about'), href: '/about' },
-        { label: language === 'en' ? 'Our Team' : 'فريقنا', href: '#' },
-        { label: language === 'en' ? 'Careers' : 'الوظائف', href: '#' },
-        { label: t('nav.contact'), href: '#' }
-      ]
-    },
-    {
-      title: language === 'en' ? 'Resources' : 'الموارد',
-      links: [
-        { label: language === 'en' ? 'Documentation' : 'التوثيق', href: '#' },
-        { label: language === 'en' ? 'API Reference' : 'مرجع API', href: '#' },
-        { label: language === 'en' ? 'Support Center' : 'مركز الدعم', href: '#' },
-        { label: language === 'en' ? 'Privacy Policy' : 'سياسة الخصوصية', href: '#' }
-      ]
-    }
+  const quickLinks = [
+    { label: "Home", href: "/" },
+    { label: "About Us", href: "/about" },
+    { label: "Services", href: "#services" },
+    { label: "Contact", href: "#contact" }
   ];
 
-  const globalOffices = [
-    {
-      country: language === 'en' ? 'Egypt' : 'مصر',
-      city: language === 'en' ? 'Cairo' : 'القاهرة',
-      address: language === 'en' ? 'New Administrative Capital' : 'العاصمة الإدارية الجديدة'
-    },
-    {
-      country: language === 'en' ? 'UAE' : 'الإمارات',
-      city: language === 'en' ? 'Dubai' : 'دبي',
-      address: language === 'en' ? 'Dubai International Financial Centre' : 'مركز دبي المالي العالمي'
-    },
-    {
-      country: language === 'en' ? 'Saudi Arabia' : 'السعودية',
-      city: language === 'en' ? 'Riyadh' : 'الرياض',
-      address: language === 'en' ? 'King Abdullah Financial District' : 'حي الملك عبدالله المالي'
-    }
+  const services = [
+    { label: "Company Verification", href: "#" },
+    { label: "Due Diligence", href: "#" },
+    { label: "Risk Assessment", href: "#" },
+    { label: "Compliance Check", href: "#" }
+  ];
+
+  const contactInfo = [
+    { icon: Phone, label: "Phone", value: "+971 4 123 4567" },
+    { icon: Mail, label: "Email", value: "info@globaltrust.com" },
+    { icon: MapPin, label: "Address", value: "Dubai, UAE" }
   ];
 
   return (
-    <footer className="bg-primary text-primary-foreground">
+    <footer className="bg-gradient-to-br from-primary via-primary/95 to-primary/90 text-white">
       <div className="container mx-auto px-6 py-16">
-        {/* Top Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
-          {/* Company Info & Newsletter */}
-          <div>
-            <div className="flex items-center space-x-3 mb-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          
+          {/* Company Info */}
+          <div className="lg:col-span-2">
+            <div className="flex items-center mb-6">
               <img 
                 src="/lovable-uploads/5c73632b-646a-4bab-b94f-3e7e3dd4296e.png" 
                 alt="Global Trust Logo" 
-                className="h-12 w-auto filter brightness-0 invert"
+                className="h-12 w-auto filter brightness-0 invert mr-3"
               />
               <div>
-                <h3 className="text-2xl font-bold font-heading">
-                  Global Trust
-                </h3>
-                <p className="text-primary-foreground/80 text-sm">
-                  {t('hero.title')}
-                </p>
+                <h3 className="text-2xl font-bold font-heading">Global Trust</h3>
+                <p className="text-white/80 text-sm">{t('hero.title')}</p>
               </div>
             </div>
             
-            <p className="text-primary-foreground/90 mb-8 leading-relaxed">
+            <p className="text-white/90 mb-6 leading-relaxed text-lg">
               {t('footer.tagline')}
             </p>
 
-            {/* Newsletter */}
-            <div>
-              <h4 className="font-semibold mb-4 font-heading">
-                {language === 'en' ? 'Stay Updated' : 'ابق على اطلاع'}
-              </h4>
-              <div className="flex space-x-3">
+            {/* Newsletter Signup */}
+            <div className="mb-6">
+              <h4 className="font-semibold mb-3 font-heading">Stay Updated</h4>
+              <div className="flex gap-2 max-w-sm">
                 <Input
-                  placeholder={language === 'en' ? "Enter your email" : "أدخل بريدك الإلكتروني"}
+                  type="email"
+                  placeholder="Enter your email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/60"
+                  className="bg-white/10 border-white/20 text-white placeholder:text-white/60 focus:bg-white/20"
                 />
-                <Button
+                <Button 
                   onClick={handleSubscribe}
                   variant="secondary"
-                  className="px-6"
+                  className="shrink-0"
                 >
-                  {language === 'en' ? 'Subscribe' : 'اشترك'}
+                  Subscribe
                 </Button>
               </div>
             </div>
-          </div>
 
-          {/* Global Offices */}
-          <div>
-            <h4 className="font-semibold mb-6 font-heading">
-              {language === 'en' ? 'Global Offices' : 'المكاتب العالمية'}
-            </h4>
-            <div className="space-y-4">
-              {globalOffices.map((office, index) => (
-                <div key={index} className="flex items-start space-x-3 p-4 bg-primary-foreground/5 rounded-lg">
-                  <MapPin className="h-5 w-5 text-accent mt-1 flex-shrink-0" />
-                  <div>
-                    <h5 className="font-medium text-primary-foreground">
-                      {office.city}, {office.country}
-                    </h5>
-                    <p className="text-sm text-primary-foreground/80">
-                      {office.address}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Middle Section - Links */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 py-12 border-t border-b border-primary-foreground/20">
-          {footerSections.map((section, index) => (
-            <div key={index}>
-              <h4 className="font-semibold mb-4 font-heading">
-                {section.title}
-              </h4>
-              <ul className="space-y-3">
-                {section.links.map((link, linkIndex) => (
-                  <li key={linkIndex}>
-                    <a
-                      href={link.href}
-                      className="text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-200"
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-
-        {/* Bottom Section */}
-        <div className="flex flex-col md:flex-row items-center justify-between">
-          <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8 mb-6 md:mb-0">
-            {/* Contact Info */}
-            <div className="flex items-center space-x-2 text-primary-foreground/80">
-              <Mail className="h-4 w-4" />
-              <span className="text-sm">contact@egyptglobaltrust.com</span>
-            </div>
-            <div className="flex items-center space-x-2 text-primary-foreground/80">
-              <Phone className="h-4 w-4" />
-              <span className="text-sm">+20 2 1234 5678</span>
-            </div>
-            <div className="flex items-center space-x-2 text-primary-foreground/80">
-              <Globe className="h-4 w-4" />
-              <span className="text-sm">
-                {language === 'en' ? '50+ Countries' : 'أكثر من 50 دولة'}
-              </span>
-            </div>
-          </div>
-
-          {/* Social Links & Copyright */}
-          <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
-            <div className="flex items-center space-x-4">
-              <a href="#" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+            {/* Social Links */}
+            <div className="flex gap-4">
+              <Button size="sm" variant="ghost" className="text-white hover:bg-white/10 p-2">
                 <Linkedin className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+              </Button>
+              <Button size="sm" variant="ghost" className="text-white hover:bg-white/10 p-2">
                 <Twitter className="h-5 w-5" />
-              </a>
+              </Button>
+              <Button size="sm" variant="ghost" className="text-white hover:bg-white/10 p-2">
+                <Globe className="h-5 w-5" />
+              </Button>
             </div>
-            <p className="text-sm text-primary-foreground/60">
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h4 className="font-semibold mb-4 text-lg font-heading">{t('footer.quickLinks')}</h4>
+            <ul className="space-y-3">
+              {quickLinks.map((link, index) => (
+                <li key={index}>
+                  <a 
+                    href={link.href}
+                    className="text-white/80 hover:text-white transition-colors duration-200 flex items-center group"
+                  >
+                    <span className="group-hover:translate-x-1 transition-transform duration-200">
+                      {link.label}
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h4 className="font-semibold mb-4 text-lg font-heading">{t('footer.services')}</h4>
+            <ul className="space-y-3">
+              {services.map((service, index) => (
+                <li key={index}>
+                  <a 
+                    href={service.href}
+                    className="text-white/80 hover:text-white transition-colors duration-200 flex items-center group"
+                  >
+                    <span className="group-hover:translate-x-1 transition-transform duration-200">
+                      {service.label}
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Contact Info */}
+        <div className="border-t border-white/20 pt-8 mb-8">
+          <h4 className="font-semibold mb-6 text-lg font-heading text-center">{t('footer.contact')}</h4>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {contactInfo.map((info, index) => (
+              <div key={index} className="flex items-center justify-center md:justify-start">
+                <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center mr-3">
+                  <info.icon className="h-5 w-5 text-white" />
+                </div>
+                <div>
+                  <p className="text-white/70 text-sm">{info.label}</p>
+                  <p className="text-white font-medium">{info.value}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="border-t border-white/20 pt-8 text-center">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-white/70">
               © 2024 Global Trust. {t('footer.rights')}
             </p>
+            <div className="flex gap-6">
+              <a href="#" className="text-white/70 hover:text-white transition-colors text-sm">
+                Privacy Policy
+              </a>
+              <a href="#" className="text-white/70 hover:text-white transition-colors text-sm">
+                Terms of Service
+              </a>
+              <a href="#" className="text-white/70 hover:text-white transition-colors text-sm">
+                Cookie Policy
+              </a>
+            </div>
           </div>
         </div>
       </div>
