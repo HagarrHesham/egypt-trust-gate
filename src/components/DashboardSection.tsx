@@ -19,13 +19,11 @@ import {
 } from "lucide-react";
 
 const DashboardSection = () => {
-  const [language] = useState<'en' | 'ar'>('en');
-
   const recentReports = [
     {
       id: "DD-2024-001",
       company: "ADNOC Trading Ltd.",
-      type: language === 'en' ? 'Full Due Diligence' : 'العناية الواجبة الكاملة',
+      type: "Full Due Diligence",
       status: 'completed',
       date: "2024-01-15",
       score: 85
@@ -33,7 +31,7 @@ const DashboardSection = () => {
     {
       id: "DD-2024-002", 
       company: "Cairo Steel Industries",
-      type: language === 'en' ? 'Credit Report' : 'تقرير ائتماني',
+      type: "Credit Report",
       status: 'in-progress',
       date: "2024-01-16",
       score: null
@@ -41,7 +39,7 @@ const DashboardSection = () => {
     {
       id: "DD-2024-003",
       company: "Emirates Global Investments",
-      type: language === 'en' ? 'Field Verification' : 'التحقق الميداني',
+      type: "Field Verification",
       status: 'pending',
       date: "2024-01-17", 
       score: null
@@ -50,28 +48,28 @@ const DashboardSection = () => {
 
   const stats = [
     {
-      title: language === 'en' ? 'Total Reports' : 'إجمالي التقارير',
+      title: "Total Reports",
       value: "247",
       change: "+12%",
       icon: FileText,
       color: "text-primary"
     },
     {
-      title: language === 'en' ? 'Companies Verified' : 'الشركات المتحققة',
+      title: "Companies Verified",
       value: "189",
       change: "+8%", 
       icon: Building,
       color: "text-success"
     },
     {
-      title: language === 'en' ? 'Active Requests' : 'الطلبات النشطة',
+      title: "Active Requests",
       value: "12",
       change: "+3",
       icon: Clock,
       color: "text-accent"
     },
     {
-      title: language === 'en' ? 'Total Investment' : 'إجمالي الاستثمار',
+      title: "Total Investment",
       value: "$24,580",
       change: "+18%",
       icon: DollarSign,
@@ -99,9 +97,9 @@ const DashboardSection = () => {
 
   const getStatusText = (status: string) => {
     switch (status) {
-      case 'completed': return language === 'en' ? 'Completed' : 'مكتمل';
-      case 'in-progress': return language === 'en' ? 'In Progress' : 'قيد التنفيذ';
-      case 'pending': return language === 'en' ? 'Pending' : 'في الانتظار';
+      case 'completed': return 'Completed';
+      case 'in-progress': return 'In Progress';
+      case 'pending': return 'Pending';
       default: return status;
     }
   };
@@ -111,16 +109,13 @@ const DashboardSection = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <Badge variant="secondary" className="mb-4 px-4 py-2">
-            {language === 'en' ? 'Investor Dashboard' : 'لوحة تحكم المستثمر'}
+            Investor Dashboard
           </Badge>
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6 font-heading">
-            {language === 'en' ? 'Manage Your Due Diligence Portfolio' : 'إدارة محفظة العناية الواجبة'}
+            Manage Your Due Diligence Portfolio
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            {language === 'en' 
-              ? 'Track requests, download reports, and monitor your investment due diligence activities from one centralized dashboard.'
-              : 'تتبع الطلبات، وتحميل التقارير، ومراقبة أنشطة العناية الواجبة للاستثمار من لوحة تحكم مركزية واحدة.'
-            }
+            Track requests, download reports, and monitor your investment due diligence activities from one centralized dashboard.
           </p>
         </div>
 
@@ -153,15 +148,15 @@ const DashboardSection = () => {
           <TabsList className="grid w-full lg:w-auto grid-cols-3 mb-8">
             <TabsTrigger value="reports" className="flex items-center space-x-2">
               <FileText className="h-4 w-4" />
-              <span>{language === 'en' ? 'Reports' : 'التقارير'}</span>
+              <span>Reports</span>
             </TabsTrigger>
             <TabsTrigger value="analytics" className="flex items-center space-x-2">
               <BarChart className="h-4 w-4" />
-              <span>{language === 'en' ? 'Analytics' : 'التحليلات'}</span>
+              <span>Analytics</span>
             </TabsTrigger>
             <TabsTrigger value="requests" className="flex items-center space-x-2">
               <Users className="h-4 w-4" />
-              <span>{language === 'en' ? 'Requests' : 'الطلبات'}</span>
+              <span>Requests</span>
             </TabsTrigger>
           </TabsList>
 
@@ -169,10 +164,10 @@ const DashboardSection = () => {
             <Card className="bg-gradient-card border border-border shadow-card">
               <CardHeader>
                 <CardTitle className="font-heading">
-                  {language === 'en' ? 'Recent Due Diligence Reports' : 'تقارير العناية الواجبة الحديثة'}
+                  Recent Due Diligence Reports
                 </CardTitle>
                 <CardDescription>
-                  {language === 'en' ? 'View and download your completed reports' : 'عرض وتحميل التقارير المكتملة'}
+                  View and download your completed reports
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -197,7 +192,7 @@ const DashboardSection = () => {
                           <div className="text-center">
                             <div className="text-lg font-bold text-foreground">{report.score}</div>
                             <div className="text-xs text-muted-foreground">
-                              {language === 'en' ? 'Risk Score' : 'نقاط المخاطر'}
+                              Risk Score
                             </div>
                           </div>
                         )}
@@ -210,12 +205,12 @@ const DashboardSection = () => {
                         <div className="flex space-x-2">
                           <Button size="sm" variant="outline">
                             <Eye className="h-4 w-4 mr-2" />
-                            {language === 'en' ? 'View' : 'عرض'}
+                            View
                           </Button>
                           {report.status === 'completed' && (
                             <Button size="sm">
                               <Download className="h-4 w-4 mr-2" />
-                              {language === 'en' ? 'Download' : 'تحميل'}
+                              Download
                             </Button>
                           )}
                         </div>
@@ -232,28 +227,28 @@ const DashboardSection = () => {
               <Card className="bg-gradient-card border border-border shadow-card">
                 <CardHeader>
                   <CardTitle className="font-heading">
-                    {language === 'en' ? 'Risk Distribution' : 'توزيع المخاطر'}
+                    Risk Distribution
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
                     <div>
                       <div className="flex justify-between mb-2">
-                        <span className="text-sm font-medium">{language === 'en' ? 'Low Risk' : 'مخاطر منخفضة'}</span>
+                        <span className="text-sm font-medium">Low Risk</span>
                         <span className="text-sm text-muted-foreground">65%</span>
                       </div>
                       <Progress value={65} className="h-2" />
                     </div>
                     <div>
                       <div className="flex justify-between mb-2">
-                        <span className="text-sm font-medium">{language === 'en' ? 'Medium Risk' : 'مخاطر متوسطة'}</span>
+                        <span className="text-sm font-medium">Medium Risk</span>
                         <span className="text-sm text-muted-foreground">25%</span>
                       </div>
                       <Progress value={25} className="h-2" />
                     </div>
                     <div>
                       <div className="flex justify-between mb-2">
-                        <span className="text-sm font-medium">{language === 'en' ? 'High Risk' : 'مخاطر عالية'}</span>
+                        <span className="text-sm font-medium">High Risk</span>
                         <span className="text-sm text-muted-foreground">10%</span>
                       </div>
                       <Progress value={10} className="h-2" />
@@ -265,7 +260,7 @@ const DashboardSection = () => {
               <Card className="bg-gradient-card border border-border shadow-card">
                 <CardHeader>
                   <CardTitle className="font-heading">
-                    {language === 'en' ? 'Monthly Activity' : 'النشاط الشهري'}
+                    Monthly Activity
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -274,15 +269,12 @@ const DashboardSection = () => {
                     <div>
                       <div className="text-2xl font-bold text-foreground">+24%</div>
                       <div className="text-sm text-muted-foreground">
-                        {language === 'en' ? 'vs last month' : 'مقارنة بالشهر الماضي'}
+                        vs last month
                       </div>
                     </div>
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    {language === 'en' 
-                      ? 'Your due diligence activity has increased significantly this month.'
-                      : 'زاد نشاط العناية الواجبة بشكل كبير هذا الشهر.'
-                    }
+                    Your due diligence activity has increased significantly this month.
                   </p>
                 </CardContent>
               </Card>
@@ -295,14 +287,14 @@ const DashboardSection = () => {
                 <div className="flex items-center justify-between">
                   <div>
                     <CardTitle className="font-heading">
-                      {language === 'en' ? 'Submit New Request' : 'إرسال طلب جديد'}
+                      Submit New Request
                     </CardTitle>
                     <CardDescription>
-                      {language === 'en' ? 'Request due diligence services for new entities' : 'طلب خدمات العناية الواجبة للكيانات الجديدة'}
+                      Request due diligence services for new entities
                     </CardDescription>
                   </div>
                   <Button>
-                    {language === 'en' ? 'New Request' : 'طلب جديد'}
+                    New Request
                   </Button>
                 </div>
               </CardHeader>
@@ -312,13 +304,13 @@ const DashboardSection = () => {
                     <CardContent className="p-6 text-center">
                       <FileText className="h-12 w-12 text-primary mx-auto mb-4" />
                       <h3 className="font-semibold mb-2">
-                        {language === 'en' ? 'Data Verification' : 'التحقق من البيانات'}
+                        Data Verification
                       </h3>
                       <p className="text-sm text-muted-foreground mb-4">
-                        {language === 'en' ? 'Quick digital checks' : 'فحوصات رقمية سريعة'}
+                        Quick digital checks
                       </p>
                       <Button variant="outline" size="sm">
-                        {language === 'en' ? 'Start Request' : 'بدء الطلب'}
+                        Start Request
                       </Button>
                     </CardContent>
                   </Card>
@@ -327,13 +319,13 @@ const DashboardSection = () => {
                     <CardContent className="p-6 text-center">
                       <Users className="h-12 w-12 text-accent mx-auto mb-4" />
                       <h3 className="font-semibold mb-2">
-                        {language === 'en' ? 'Field Verification' : 'التحقق الميداني'}
+                        Field Verification
                       </h3>
                       <p className="text-sm text-muted-foreground mb-4">
-                        {language === 'en' ? 'On-site investigations' : 'تحقيقات في الموقع'}
+                        On-site investigations
                       </p>
                       <Button variant="outline" size="sm">
-                        {language === 'en' ? 'Start Request' : 'بدء الطلب'}
+                        Start Request
                       </Button>
                     </CardContent>
                   </Card>
@@ -342,13 +334,13 @@ const DashboardSection = () => {
                     <CardContent className="p-6 text-center">
                       <Building className="h-12 w-12 text-success mx-auto mb-4" />
                       <h3 className="font-semibold mb-2">
-                        {language === 'en' ? 'Full Due Diligence' : 'العناية الواجبة الكاملة'}
+                        Full Due Diligence
                       </h3>
                       <p className="text-sm text-muted-foreground mb-4">
-                        {language === 'en' ? 'Comprehensive analysis' : 'تحليل شامل'}
+                        Comprehensive analysis
                       </p>
                       <Button variant="outline" size="sm">
-                        {language === 'en' ? 'Start Request' : 'بدء الطلب'}
+                        Start Request
                       </Button>
                     </CardContent>
                   </Card>
