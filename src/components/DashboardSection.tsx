@@ -17,8 +17,16 @@ import {
   Building,
   DollarSign
 } from "lucide-react";
+import { useAuth } from "@/contexts/AuthContext";
+import DashboardAdvertising from "./DashboardAdvertising";
 
 const DashboardSection = () => {
+  const { isAuthenticated } = useAuth();
+  
+  // If not authenticated, show advertising section
+  if (!isAuthenticated) {
+    return <DashboardAdvertising />;
+  }
   const recentReports = [
     {
       id: "DD-2024-001",
