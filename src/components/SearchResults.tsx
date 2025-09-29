@@ -5,7 +5,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Building2, MapPin, Users, Calendar, AlertTriangle, CheckCircle, X } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useAuth } from "@/contexts/AuthContext";
 import PaymentModal from "./PaymentModal";
+import LoginModal from "./LoginModal";
 
 interface SearchResultsProps {
   searchTerm: string;
@@ -14,6 +16,8 @@ interface SearchResultsProps {
 
 const SearchResults = ({ searchTerm, onClose }: SearchResultsProps) => {
   const { t } = useLanguage();
+  const { isAuthenticated } = useAuth();
+  const [showLoginModal, setShowLoginModal] = useState(false);
   const [paymentModal, setPaymentModal] = useState<{
     isOpen: boolean;
     service: any;
@@ -94,6 +98,11 @@ const SearchResults = ({ searchTerm, onClose }: SearchResultsProps) => {
   };
 
   const handleRequestReport = (service: any, companyName: string) => {
+    if (!isAuthenticated) {
+      setShowLoginModal(true);
+      return;
+    }
+    
     setPaymentModal({
       isOpen: true,
       service,
@@ -210,6 +219,11 @@ const SearchResults = ({ searchTerm, onClose }: SearchResultsProps) => {
         onClose={() => setPaymentModal({ isOpen: false, service: null, companyName: '' })}
         service={paymentModal.service}
         companyName={paymentModal.companyName}
+      />
+
+      <LoginModal
+        isOpen={showLoginModal}
+        onClose={() => setShowLoginModal(false)}
       />
     </>
   );
