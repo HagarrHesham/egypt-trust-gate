@@ -44,22 +44,62 @@ const PaymentModal = ({ isOpen, onClose, service, companyName }: PaymentModalPro
       icon: CreditCard
     },
     {
+      id: 'apple',
+      name: 'Apple Pay',
+      description: 'Pay with Touch ID or Face ID',
+      icon: () => (
+        <div className="h-6 w-6 bg-black rounded text-white text-xs flex items-center justify-center font-bold">
+          
+        </div>
+      )
+    },
+    {
+      id: 'google',
+      name: 'Google Pay',
+      description: 'Pay with Google account',
+      icon: () => (
+        <div className="h-6 w-6 bg-gradient-to-r from-blue-500 to-green-500 rounded text-white text-xs flex items-center justify-center font-bold">
+          G
+        </div>
+      )
+    },
+    {
+      id: 'paypal',
+      name: 'PayPal',
+      description: 'Pay with PayPal account',
+      icon: () => (
+        <div className="h-6 w-6 bg-blue-600 rounded text-white text-xs flex items-center justify-center font-bold">
+          PP
+        </div>
+      )
+    },
+    {
       id: 'bank',
       name: 'Bank Transfer',
       description: 'Direct bank transfer',
       icon: Banknote
-    },
-    {
-      id: 'mobile',
-      name: 'Mobile Payment',
-      description: 'Mobile wallet payment',
-      icon: Smartphone
     }
   ];
 
   const handleMethodSelect = (methodId: string) => {
     setSelectedMethod(methodId);
-    setStep('card-details');
+    
+    // For digital wallets, go directly to processing
+    if (['apple', 'google', 'paypal'].includes(methodId)) {
+      handleDigitalPayment(methodId);
+    } else {
+      setStep('card-details');
+    }
+  };
+
+  const handleDigitalPayment = async (methodId: string) => {
+    setIsProcessing(true);
+    
+    // Simulate digital wallet authentication
+    setTimeout(() => {
+      setIsProcessing(false);
+      setStep('confirmation');
+    }, 2000);
   };
 
   const handlePayment = async () => {
@@ -105,7 +145,13 @@ const PaymentModal = ({ isOpen, onClose, service, companyName }: PaymentModalPro
             onClick={() => handleMethodSelect(method.id)}
           >
             <CardContent className="flex items-center p-4">
-              <method.icon className="h-6 w-6 text-primary mr-3" />
+              <div className="mr-3">
+                {typeof method.icon === 'function' ? (
+                  React.createElement(method.icon)
+                ) : (
+                  React.createElement(method.icon, { className: "h-6 w-6 text-primary" })
+                )}
+              </div>
               <div className="flex-1">
                 <h4 className="font-medium font-heading">{method.name}</h4>
                 <p className="text-sm text-muted-foreground">{method.description}</p>
