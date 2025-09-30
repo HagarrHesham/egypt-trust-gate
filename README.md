@@ -10,7 +10,7 @@ There are several ways of editing your application.
 
 **Use Lovable**
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/a163f15e-665e-4187-b113-1bfc292d5816) and start prompting.
+Simply visit the [Lovable Project](https://egypt-trust-gate.lovable.app/) and start prompting.
 
 Changes made via Lovable will be committed automatically to this repo.
 
