@@ -398,7 +398,7 @@ const ServicesSection = () => {
               <Button 
                 variant="secondary" 
                 size="lg"
-                onClick={() => window.open('https://api.whatsapp.com/send/?phone=%2B201159110666&text=Hi%21+I%27m+interested+in+learning+more+about+Global+Trust+Custom+Services+and+would+like+to+get+more+details+regarding+Due+Diligence.&type=phone_number&app_absent=0', '_blank')}
+                onClick={() => window.open('https://wa.me/201159110666?text=Hi!%20I%27m%20interested%20in%20learning%20more%20about%20Global%20Trust%20Custom%20Services%20and%20would%20like%20to%20get%20more%20details%20regarding%20Due%20Diligence.', '_blank')}
               >
                 {t('services.cta.button')}
               </Button>
