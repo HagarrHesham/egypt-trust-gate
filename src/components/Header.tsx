@@ -24,11 +24,7 @@ const Header = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link 
-            to="/" 
-            className="flex items-center space-x-3"
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          >
+          <Link to="/" className="flex items-center space-x-3">
             <img 
               src="/lovable-uploads/5c73632b-646a-4bab-b94f-3e7e3dd4296e.png" 
               alt="Global Trust Logo" 
