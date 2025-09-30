@@ -395,7 +395,11 @@ const ServicesSection = () => {
               <p className="text-primary-foreground/90 mb-6">
                 {t('services.cta.subtitle')}
               </p>
-              <Button variant="secondary" size="lg">
+              <Button 
+                variant="secondary" 
+                size="lg"
+                onClick={() => window.open('https://api.whatsapp.com/send/?phone=%2B201159110666&text=Hi%21+I%27m+interested+in+learning+more+about+Global+Trust+Custom+Services+and+would+like+to+get+more+details+regarding+Due+Diligence.&type=phone_number&app_absent=0', '_blank')}
+              >
                 {t('services.cta.button')}
               </Button>
             </CardContent>
