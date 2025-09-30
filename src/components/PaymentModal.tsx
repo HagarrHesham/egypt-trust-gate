@@ -99,6 +99,9 @@ const PaymentModal = ({ isOpen, onClose, service, companyName }: PaymentModalPro
     setTimeout(() => {
       setIsProcessing(false);
       setStep('confirmation');
+      
+      // Save purchase to localStorage
+      savePurchaseToLocalStorage();
     }, 2000);
   };
 
@@ -109,7 +112,27 @@ const PaymentModal = ({ isOpen, onClose, service, companyName }: PaymentModalPro
     setTimeout(() => {
       setIsProcessing(false);
       setStep('confirmation');
+      
+      // Save purchase to localStorage
+      savePurchaseToLocalStorage();
     }, 3000);
+  };
+
+  const savePurchaseToLocalStorage = () => {
+    const purchase = {
+      id: `DD-${Date.now()}`,
+      company: companyName,
+      type: service.title,
+      status: 'pending',
+      date: new Date().toISOString().split('T')[0],
+      price: service.price,
+      progress: 0
+    };
+
+    const existingPurchases = localStorage.getItem('gtgate_purchases');
+    const purchases = existingPurchases ? JSON.parse(existingPurchases) : [];
+    purchases.unshift(purchase);
+    localStorage.setItem('gtgate_purchases', JSON.stringify(purchases));
   };
 
   const handleClose = () => {

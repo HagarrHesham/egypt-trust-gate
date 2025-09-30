@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -22,11 +22,29 @@ import DashboardAdvertising from "./DashboardAdvertising";
 
 const DashboardSection = () => {
   const { isAuthenticated } = useAuth();
+  const [purchasedServices, setPurchasedServices] = useState<any[]>([]);
   
   // If not authenticated, show advertising section
   if (!isAuthenticated) {
     return <DashboardAdvertising />;
   }
+
+  useEffect(() => {
+    // Load purchased services from localStorage
+    const loadPurchases = () => {
+      const stored = localStorage.getItem('gtgate_purchases');
+      if (stored) {
+        setPurchasedServices(JSON.parse(stored));
+      }
+    };
+
+    loadPurchases();
+    
+    // Listen for storage changes
+    window.addEventListener('storage', loadPurchases);
+    return () => window.removeEventListener('storage', loadPurchases);
+  }, []);
+
   const recentReports = [
     {
       id: "DD-2024-001",
@@ -180,7 +198,12 @@ const DashboardSection = () => {
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
-                  {recentReports.map((report) => (
+                  {purchasedServices.length === 0 && (
+                    <div className="text-center py-8 text-muted-foreground">
+                      No purchased services yet. Start by requesting a report!
+                    </div>
+                  )}
+                  {purchasedServices.map((report) => (
                     <div key={report.id} className="flex items-center justify-between p-4 border border-border rounded-lg bg-background/50">
                       <div className="flex items-center space-x-4">
                         <div className={`flex items-center space-x-2 ${getStatusColor(report.status)}`}>
